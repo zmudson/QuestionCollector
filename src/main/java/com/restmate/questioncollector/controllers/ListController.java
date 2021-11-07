@@ -15,6 +15,7 @@ public class ListController {
     private final CrudService sectionService;
     private final CrudService courseService;
 
+
     public ListController(
             @Qualifier("questionService") CrudService questionService,
             @Qualifier("categoryService") CrudService categoryService,
