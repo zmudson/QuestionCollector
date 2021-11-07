@@ -3,29 +3,31 @@ package com.restmate.questioncollector.domain;
 import javax.persistence.*;
 
 @Entity
-public class Question {
+@Table(name = "questions")
+public class Question extends BaseEntity{
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name = "description")
     private String description;
+
+    @Column(name = "answer")
     private String answer;
 
-    public Question(Long id, String description, String answer) {
-        this.id = id;
+    @ManyToOne
+    @JoinColumn(name = "course_id")
+    private Course course;
+
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
+
+    public Question(String description, String answer, Course course, Category category) {
         this.description = description;
         this.answer = answer;
+        this.course = course;
+        this.category = category;
     }
 
     public Question() {
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getDescription() {

@@ -8,8 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class ListController {
 
     @RequestMapping({"/list","/list.html"})
-public String index(){
-
-    return "list";
-}
+    public String index(){
+        return "list";
+    }
 }

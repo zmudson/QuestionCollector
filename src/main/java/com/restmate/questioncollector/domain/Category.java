@@ -1,32 +1,27 @@
 package com.restmate.questioncollector.domain;
 
-
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
-public class Category {
+@Table(name = "categories")
+public class Category extends BaseEntity{
 
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name = "description")
     private String description;
 
+    @OneToMany(
+            fetch = FetchType.LAZY,
+            mappedBy = "category"
+    )
+    private Set<Question> questions = new HashSet<>();
 
-    public Category(Long id, String description) {
-        this.id = id;
+    public Category(String description) {
         this.description = description;
     }
 
     public Category() {
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getDescription() {

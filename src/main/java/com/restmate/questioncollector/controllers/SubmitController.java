@@ -9,7 +9,6 @@ public class SubmitController {
 
     @RequestMapping({"/submit","/submit.html"})
     public String index(){
-
         return "submit";
     }
 }
