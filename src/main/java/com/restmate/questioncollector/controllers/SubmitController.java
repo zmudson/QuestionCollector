@@ -24,7 +24,6 @@ public class SubmitController {
     }
 
     @RequestMapping({"/submit","/submit.html"})
-
     public String index(Model model){
         model.addAttribute("question", new QuestionCommand());
 
