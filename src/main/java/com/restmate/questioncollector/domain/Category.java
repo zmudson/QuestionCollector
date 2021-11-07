@@ -8,7 +8,10 @@ import java.util.Set;
 @Table(name = "categories")
 public class Category extends BaseEntity{
 
-    @Column(name = "description")
+    @Column(
+            name = "description",
+            unique = true
+    )
     private String description;
 
     @OneToMany(
