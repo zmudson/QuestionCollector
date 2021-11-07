@@ -1,5 +1,6 @@
 package com.restmate.questioncollector;
 
+import com.restmate.questioncollector.domain.SectionType;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
