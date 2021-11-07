@@ -26,8 +26,9 @@ public class ListController {
         this.courseService = courseService;
     }
 
-    @RequestMapping({"/list","/list.html"})
-    public String index(){
+    @RequestMapping({"/questions","/questions.html"})
+public String index(){
+
         return "list";
     }
 }
