@@ -1,30 +1,33 @@
 package com.restmate.questioncollector.domain;
 
 import javax.persistence.*;
-
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
-public class Course {
+@Table(name = "courses")
+public class Course extends BaseEntity{
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name = "name")
     private String name;
 
-    public Course(Long id, String name) {
-        this.id = id;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "section_id")
+    private Section section;
+
+    @OneToMany(
+            fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL,
+            mappedBy = "course"
+    )
+    private Set<Question> questions = new HashSet<>();
+
+    public Course(String name, Section section) {
         this.name = name;
+        this.section = section;
     }
 
     public Course() {
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getName() {
