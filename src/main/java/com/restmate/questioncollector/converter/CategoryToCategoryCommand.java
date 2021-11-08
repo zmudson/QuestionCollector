@@ -13,6 +13,7 @@ public class CategoryToCategoryCommand implements Converter<Category, CategoryCo
         categoryCommand.setId(source.getId());
         categoryCommand.setDescription(source.getName());
 
+
         return categoryCommand;
     }
 }
