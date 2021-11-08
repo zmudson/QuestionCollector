@@ -9,10 +9,10 @@ import java.util.Set;
 public class Category extends BaseEntity{
 
     @Column(
-            name = "description",
+            name = "name",
             unique = true
     )
-    private String description;
+    private String name;
 
     @OneToMany(
             fetch = FetchType.LAZY,
@@ -21,17 +21,17 @@ public class Category extends BaseEntity{
     private Set<Question> questions = new HashSet<>();
 
     public Category(String description) {
-        this.description = description;
+        this.name = description;
     }
 
     public Category() {
     }
 
-    public String getDescription() {
-        return description;
+    public String getName() {
+        return name;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setName(String description) {
+        this.name = description;
     }
 }
