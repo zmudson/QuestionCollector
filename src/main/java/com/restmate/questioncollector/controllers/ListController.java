@@ -4,6 +4,7 @@ import com.restmate.questioncollector.services.CrudService;
 import com.restmate.questioncollector.services.QuestionService;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 
@@ -26,8 +27,9 @@ public class ListController {
         this.courseService = courseService;
     }
 
-    @RequestMapping({"/list","/list.html"})
-    public String index(){
+    @RequestMapping({"/questions","/questions.html"})
+    public String index(Model model){
+        model.addAttribute("questions", questionService.findAll());
         return "list";
     }
 }
