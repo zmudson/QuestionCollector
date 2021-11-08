@@ -35,6 +35,10 @@ const headerEl = document.querySelector(".header");
 
 if (btnNav) {
   btnNav.addEventListener("click", function () {
+<<<<<<< HEAD
+=======
+    console.log("click");
+>>>>>>> Added feature without category handling
     headerEl.classList.toggle("nav-open");
   });
 }

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 function showEnds() {
   if (localStorage.getItem('end') == 'front') {
     var sizeFront = document.getElementsByClassName('frontend').length;
@@ -61,3 +62,16 @@ $(function () {
     showEnds();
   });
 });
+=======
+
+function turnSide(i) {
+  if (document.getElementsByClassName('question')[i].style.visibility == "hidden") {
+    document.getElementsByClassName('question')[i].style.visibility = "visible";
+    document.getElementsByClassName('answer')[i].style.visibility = "hidden";
+  }
+  else {
+    document.getElementsByClassName('question')[i].style.visibility = "hidden";
+    document.getElementsByClassName('answer')[i].style.visibility = "visible";
+  }
+}
+>>>>>>> Added feature without category handling

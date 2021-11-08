@@ -1,10 +1,15 @@
 package com.restmate.questioncollector.domain;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
+@Getter
+@Setter
 @Table(name = "courses")
 public class Course extends BaseEntity{
 
@@ -30,11 +35,8 @@ public class Course extends BaseEntity{
     public Course() {
     }
 
-    public String getName() {
-        return name;
+    public void addQuestion(Question question) {
+        questions.add(question);
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
 }

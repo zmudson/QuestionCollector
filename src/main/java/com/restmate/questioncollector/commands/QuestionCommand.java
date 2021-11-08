@@ -1,5 +1,7 @@
 package com.restmate.questioncollector.commands;
 
+import com.restmate.questioncollector.domain.Category;
+import com.restmate.questioncollector.domain.Course;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -11,8 +13,8 @@ public class QuestionCommand {
     private Long id;
     private String description;
     private String answer;
-
-    //TODO add all fields
+    private String course;
+    private String category;
 
 
     @Override
@@ -21,6 +23,8 @@ public class QuestionCommand {
                 "id=" + id +
                 ", description='" + description + '\'' +
                 ", answer='" + answer + '\'' +
+                ", course=" + course +
+                ", category='" + category + '\'' +
                 '}';
     }
 }

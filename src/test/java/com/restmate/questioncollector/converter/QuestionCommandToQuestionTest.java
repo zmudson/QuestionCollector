@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class QuestionCommandToQuestionTest {
 
-    public static final Long ID_VALUE = 1L;
+    /*public static final Long ID_VALUE = 1L;
     public static final String DESCRIPTION = "description";
     public static final String ANSWER = "answer";
 
@@ -44,5 +44,5 @@ class QuestionCommandToQuestionTest {
         assertEquals(DESCRIPTION, question.getDescription());
         assertEquals(ANSWER, question.getAnswer());
 
-    }
+    }*/
 }
