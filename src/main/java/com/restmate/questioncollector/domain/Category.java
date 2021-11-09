@@ -6,7 +6,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "categories")
-public class Category extends BaseEntity{
+public class Category extends BaseEntity implements Comparable<Category>{
 
     @Column(
             name = "name",
@@ -33,5 +33,11 @@ public class Category extends BaseEntity{
 
     public void setName(String description) {
         this.name = description;
+    }
+
+
+    @Override
+    public int compareTo(Category o) {
+        return this.name.compareTo(o.getName());
     }
 }

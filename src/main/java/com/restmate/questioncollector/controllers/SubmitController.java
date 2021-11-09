@@ -1,5 +1,7 @@
 package com.restmate.questioncollector.controllers;
 
+import com.restmate.questioncollector.domain.Category;
+import com.restmate.questioncollector.domain.Course;
 import com.restmate.questioncollector.services.CategoryService;
 import com.restmate.questioncollector.services.CourseService;
 import com.restmate.questioncollector.services.CrudService;
@@ -12,6 +14,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.Set;
+import java.util.TreeSet;
 
 @Slf4j
 @Controller
@@ -31,9 +36,13 @@ public class SubmitController {
 
     @RequestMapping({"/submit","/submit.html"})
     public String index(Model model){
+
+        TreeSet<Course> courses = new TreeSet<>(((CourseService) courseService).findAll());
+        TreeSet<Category> categories = new TreeSet<>(((CategoryService)categoryService).findAll());
+
         model.addAttribute("question", new QuestionCommand());
-        model.addAttribute("courses", ((CourseService)courseService).findAll());
-        model.addAttribute("categories", ((CategoryService)categoryService).findAll());
+        model.addAttribute("courses", courses);
+        model.addAttribute("categories", categories);
 
         return "submit";
     }
