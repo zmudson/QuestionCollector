@@ -2,6 +2,12 @@ package com.restmate.questioncollector.bootstrap;
 
 import com.restmate.questioncollector.domain.*;
 import com.restmate.questioncollector.services.*;
+import com.restmate.questioncollector.domain.Course;
+import com.restmate.questioncollector.domain.Section;
+import com.restmate.questioncollector.domain.SectionType;
+import com.restmate.questioncollector.services.CourseService;
+import com.restmate.questioncollector.services.CrudService;
+import com.restmate.questioncollector.services.SectionService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -18,6 +24,7 @@ public class Bootstrap implements CommandLineRunner {
         this.sectionService = sectionService;
         this.categoryService = categoryService;
         this.questionService = questionService;
+
     }
 
     @Override
@@ -65,6 +72,7 @@ public class Bootstrap implements CommandLineRunner {
         ((CourseService)courseService).save(course4);
         ((CourseService)courseService).save(course5);
 
+
         Category category1 = new Category();
         category1.setName("CSS - positioning");
         Category category2 = new Category();
@@ -93,5 +101,6 @@ public class Bootstrap implements CommandLineRunner {
 
         ((QuestionService)questionService).save(q1);
         ((QuestionService)questionService).save(q2);
+
     }
 }

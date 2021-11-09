@@ -28,9 +28,11 @@ public class ListController {
         this.courseService = courseService;
     }
 
+
     @RequestMapping({"/questions","/questions.html"})
     public String index(Model model){
         model.addAttribute("questions", ((QuestionService)questionService).findAll());
         return "list";
+
     }
 }
