@@ -1,144 +1,143 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-        Question collector &mdash; best tool to practice webdev knowledge
-    </title>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>
+			Question collector &mdash; best tool to practice webdev knowledge
+		</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
-            rel="stylesheet"
-    />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
 
-    <link rel="stylesheet"  th:href="@{/styles/general.css}"  />
-    <link rel="stylesheet"  th:href="@{/styles/nav-styles.css}"  />
-    <link rel="stylesheet"  th:href="@{/styles/home.css}"  />
-    <link rel="stylesheet"  th:href="@{/styles/footer.css}"  />
-    <link rel="stylesheet"  th:href="@{/styles/responsive-home.css}"  />
+		<link rel="stylesheet" href="../styles/general.css" />
+		<link rel="stylesheet" href="../styles/nav-styles.css" />
+		<link rel="stylesheet" href="../styles/home.css" />
+		<link rel="stylesheet" href="../styles/footer.css" />
+    <link rel="stylesheet" href="../styles/responsive-home.css">
 
-</head>
-<body>
-<header class="header">
-    <a href="./index.html" class="header__logo"> logo </a>
+	</head>
+	<body>
+		<header class="header">
+			<a href="./index.html" class="header__logo"> logo </a>
 
 
-    <nav class="main-nav">
+		<nav class="main-nav">
         <ul class="main-nav__list">
-            <li><a class="main-nav__link" href="./index.html">home</a></li>
-            <li>
-                <a class="main-nav__link" href="./form-nav.html">submit</a>
-            </li>
-            <li>
-                <a class="link-questions" href="list.html">questions</a>
-            </li>
+          <li><a class="main-nav__link" href="./index.html">home</a></li>
+          <li>
+            <a class="main-nav__link" href="./form-nav.html">submit</a>
+          </li>
+          <li>
+            <a class="link-questions" href="./questions.html">questions</a>
+          </li>
         </ul>
-    </nav>
+      </nav>
 
-    <button class="btn-mobile">
+      <button class="btn-mobile">
         <ion-icon class="icon-mobile" name="menu-outline"></ion-icon>
         <ion-icon class="icon-mobile" name="close-outline"></ion-icon>
-    </button>
-</header>
+      </button>
+    </header>
 
-<main>
-    <section class="section-hero">
-        <div class="container grid grid--2-cols">
-            <div class="hero-text-box">
-                <h1 class="heading-primary">
-                    State-of-the-art online tool to help you study
-                </h1>
-                <p class="hero__description">
-                    One of the best tools to practice your knowledge of webdev using
-                    flashcards
-                </p>
-                <div class="hero-btns">
-                    <a class="btn btn--full" href="list.html"
-                    >Start learning</a
-                    >
-                    <a class="btn btn--outline" href="./form-nav.html"
-                    >Submit a question</a
-                    >
-                </div>
-            </div>
-            <div class="hero-img-box">
-                <!-- <img
-                    class="hero__img"
-                    src="../images/hero_painting.jpg"
-                    alt="Abstract teal painting"
-                /> -->
-            </div>
-        </div>
-    </section>
-    <section class="section-description">
-        <div class="container">
-            <h2 class="heading-secondary">How the collector works</h2>
-            <p class="description__text"></p>
-            <ul class="description-list list grid grid--3-cols">
-                <li class="description-list__item list--item">
-                    <ion-icon
-                            class="description__icon"
-                            name="share-outline"
-                    ></ion-icon
-                    ><span
-                >Send questions that you deem tricky or interesting for
+		<main>
+			<section class="section-hero">
+				<div class="container grid grid--2-cols">
+					<div class="hero-text-box">
+						<h1 class="heading-primary">
+							State-of-the-art online tool to help you study
+						</h1>
+						<p class="hero__description">
+							One of the best tools to practice your knowledge of webdev using
+							flashcards
+						</p>
+						<div class="hero-btns">
+							<a class="btn btn--full" href="./questions.html"
+								>Start learning</a
+							>
+							<a class="btn btn--outline" href="./form-nav.html"
+								>Submit a question</a
+							>
+						</div>
+					</div>
+					<div class="hero-img-box">
+						<!-- <img
+							class="hero__img"
+							src="../images/hero_painting.jpg"
+							alt="Abstract teal painting"
+						/> -->
+					</div>
+				</div>
+			</section>
+			<section class="section-description">
+				<div class="container">
+					<h2 class="heading-secondary">How the collector works</h2>
+					<p class="description__text"></p>
+					<ul class="description-list list grid grid--3-cols">
+						<li class="description-list__item list--item">
+							<ion-icon
+								class="description__icon"
+								name="share-outline"
+							></ion-icon
+							><span
+								>Send questions that you deem tricky or interesting for
 								verification</span
-                >
-                </li>
-                <li class="description-list__item list--item">
-                    <ion-icon class="description__icon" name="book-outline"></ion-icon
-                    ><span
-                >Learn from existing questions utilizing a flashcard-like
+							>
+						</li>
+						<li class="description-list__item list--item">
+							<ion-icon class="description__icon" name="book-outline"></ion-icon
+							><span
+								>Learn from existing questions utilizing a flashcard-like
 								approach</span
-                >
-                </li>
-                <li class="description-list__item list--item">
-                    <ion-icon class="description__icon" name="bulb-outline"></ion-icon
-                    ><span>Get examined using questions from the database</span>
-                </li>
-            </ul>
-        </div>
-    </section>
-</main>
+							>
+						</li>
+						<li class="description-list__item list--item">
+							<ion-icon class="description__icon" name="bulb-outline"></ion-icon
+							><span>Get examined using questions from the database</span>
+						</li>
+					</ul>
+				</div>
+			</section>
+		</main>
 
-<footer>
-    <div class="container">
-        <div class="footer--div grid in--home">
-            <div class="footer--logo">logo</div>
-            <div class="footer--links">
-                <p class="footer--desc">Check us out on:</p>
-                <a class="footer__link" href="#"
-                ><ion-icon class="footer__icon" name="logo-facebook"></ion-icon
-                ></a>
-                <a class="footer__link" href="https://github.com/restmate-pl"
-                ><ion-icon class="footer__icon" name="logo-github"></ion-icon
-                ></a>
-                <a class="footer__link" href="#"
-                ><ion-icon class="footer__icon" name="logo-linkedin"></ion-icon
-                ></a>
-            </div>
-            <div class="footer--copy">
-                <p>Copyright &copy; CodeMate 2021</p>
-            </div>
-        </div>
-    </div>
-</footer>
+		<footer>
+			<div class="container">
+				<div class="footer--div grid in--home">
+					<div class="footer--logo">logo</div>
+					<div class="footer--links">
+						<p class="footer--desc">Check us out on:</p>
+						<a class="footer__link" href="#"
+							><ion-icon class="footer__icon" name="logo-facebook"></ion-icon
+						></a>
+						<a class="footer__link" href="https://github.com/restmate-pl"
+							><ion-icon class="footer__icon" name="logo-github"></ion-icon
+						></a>
+						<a class="footer__link" href="#"
+							><ion-icon class="footer__icon" name="logo-linkedin"></ion-icon
+						></a>
+					</div>
+					<div class="footer--copy">
+						<p>Copyright &copy; CodeMate 2021</p>
+					</div>
+				</div>
+			</div>
+		</footer>
 
-<script
-        type="module"
-        src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
-        defer
-></script>
-<script
-        nomodule
-        src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-        defer
-></script>
-<script type="text/javascript" th:src="@{/scripts/script.js}" defer></script>
-
-</body>
+		<script
+			type="module"
+			src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+			defer
+		></script>
+		<script
+			nomodule
+			src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+			defer
+		></script>
+		<script type="text/javascript" src="../scripts/script.js" defer></script>
+	</body>
 </html>

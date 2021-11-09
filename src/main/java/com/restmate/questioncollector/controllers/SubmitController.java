@@ -1,5 +1,6 @@
 package com.restmate.questioncollector.controllers;
 
+import com.restmate.questioncollector.services.CategoryService;
 import com.restmate.questioncollector.services.CourseService;
 import com.restmate.questioncollector.services.CrudService;
 import com.restmate.questioncollector.services.QuestionService;
@@ -15,13 +16,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Slf4j
 @Controller
 public class SubmitController {
-    //private final CrudService categoryService;
+    private final CrudService categoryService;
     private final CrudService questionService;
     private final CrudService courseService;
 
     public SubmitController(
-            @Qualifier("questionService") CrudService questionService,
+            CrudService categoryService, @Qualifier("questionService") CrudService questionService,
             @Qualifier("courseService") CrudService courseService) {
+        this.categoryService = categoryService;
         //this.categoryService = categoryService;
         this.questionService = questionService;
         this.courseService = courseService;
@@ -31,8 +33,9 @@ public class SubmitController {
     public String index(Model model){
         model.addAttribute("question", new QuestionCommand());
         model.addAttribute("courses", ((CourseService)courseService).findAll());
+        model.addAttribute("categories", ((CategoryService)categoryService).findAll());
 
-        return "pages/form-nav";
+        return "submit";
     }
 
     @PostMapping("/submit/add/")

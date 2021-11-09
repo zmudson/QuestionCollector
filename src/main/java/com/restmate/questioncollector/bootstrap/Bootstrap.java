@@ -1,11 +1,7 @@
 package com.restmate.questioncollector.bootstrap;
 
-import com.restmate.questioncollector.domain.Course;
-import com.restmate.questioncollector.domain.Section;
-import com.restmate.questioncollector.domain.SectionType;
-import com.restmate.questioncollector.services.CourseService;
-import com.restmate.questioncollector.services.CrudService;
-import com.restmate.questioncollector.services.SectionService;
+import com.restmate.questioncollector.domain.*;
+import com.restmate.questioncollector.services.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -14,10 +10,14 @@ public class Bootstrap implements CommandLineRunner {
 
     private final CrudService courseService;
     private final CrudService sectionService;
+    private final CrudService categoryService;
+    private final CrudService questionService;
 
-    public Bootstrap(CrudService courseService, CrudService sectionService) {
+    public Bootstrap(CrudService courseService, CrudService sectionService, CrudService categoryService, CrudService questionService) {
         this.courseService = courseService;
         this.sectionService = sectionService;
+        this.categoryService = categoryService;
+        this.questionService = questionService;
     }
 
     @Override
@@ -65,7 +65,33 @@ public class Bootstrap implements CommandLineRunner {
         ((CourseService)courseService).save(course4);
         ((CourseService)courseService).save(course5);
 
+        Category category1 = new Category();
+        category1.setName("CSS - positioning");
+        Category category2 = new Category();
+        category2.setName("JavaScript - OOP");
+        Category category4 = new Category();
+        category4.setName("Dependency Injection");
+        Category category3 = new Category();
+        category3.setName("Spring Data JPA");
 
+        ((CategoryService)categoryService).save(category1);
+        ((CategoryService)categoryService).save(category2);
+        ((CategoryService)categoryService).save(category3);
+        ((CategoryService)categoryService).save(category4);
 
+        Question q1 = new Question();
+        q1.setCategory(category1);
+        q1.setCourse(course1);
+        q1.setDescription("How to center a div");
+        q1.setAnswer("use your brain");
+
+        Question q2 = new Question();
+        q2.setCategory(category4);
+        q2.setCourse(course4);
+        q2.setDescription("What is spring context");
+        q2.setAnswer("idk");
+
+        ((QuestionService)questionService).save(q1);
+        ((QuestionService)questionService).save(q2);
     }
 }

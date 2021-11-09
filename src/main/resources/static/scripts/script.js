@@ -1,31 +1,21 @@
-function selectingTeam(s1, s2, cat) {
-  const team = document.getElementById(s1);
+function selectingTeam(teamSelectId, courseSelectId, categorySelectId) {
+	const teamSelect = document.getElementById(teamSelectId);
+	const courseSelect = document.getElementById(courseSelectId);
+	const categorySelect = document.getElementById(categorySelectId);
 
-  const course = document.getElementById(s2);
-  const category = document.getElementById(cat);
+	const courseOptions = courseSelect.querySelectorAll("option");
 
-  course.innerHTML = "";
+	courseOptions.forEach((option) => {
+		// console.log(option);
+		option.style.display = "none";
+    // console.log(option.dataset.section);
+		if (teamSelect.value.toLowerCase() === option.dataset.section.toLowerCase()) {
+			option.style.display = "inline";
+		}
+	});
 
-  let optionArray = [];
-
-  if (team.value == "frontend") {
-    optionArray = [
-      "html&css|HTML&CSS",
-      "typescript|TypeScript",
-      "angular|Angular",
-    ];
-  }
-  if (team.value == "backend") {
-    optionArray = ["spring|Spring"];
-  }
-  for (let option in optionArray) {
-    const pair = optionArray[option].split("|");
-    const opt = document.createElement("option");
-    opt.value = pair[0];
-    opt.innerHTML = pair[1];
-    course.options.add(opt);
-    category.value = "";
-  }
+  // change displayed categories after switching sections
+  courseSelect.selectedIndex = 0;
 }
 
 /// mobile navigation
@@ -34,11 +24,7 @@ const btnNav = document.querySelector(".btn-mobile");
 const headerEl = document.querySelector(".header");
 
 if (btnNav) {
-  btnNav.addEventListener("click", function () {
-<<<<<<< HEAD
-=======
-    console.log("click");
->>>>>>> Added feature without category handling
-    headerEl.classList.toggle("nav-open");
-  });
+	btnNav.addEventListener("click", function () {
+		headerEl.classList.toggle("nav-open");
+	});
 }

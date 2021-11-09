@@ -1,102 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet"  th:href="@{/styles/form-styles.css}"  />
+    <link rel="stylesheet" th:href="@{/styles/form-styles.css}" />
     <link rel="stylesheet" th:href="@{/styles/nav-styles.css}" />
     <title>Question Collector</title>
-</head>
-<body>
-<header class="header">
-    <a href="./index.html" class="header__logo"> logo </a>
+  </head>
+  <body>
+    <header class="header">
+      <a href="./index.html" class="header__logo"> logo </a>
 
-    <nav class="main-nav">
+      <nav class="main-nav">
         <ul class="main-nav__list">
-            <li><a class="main-nav__link" href="./index.html">home</a></li>
-            <li>
-                <a class="main-nav__link" href="#">submit</a>
-            </li>
-            <li>
-                <a class="link-questions" href="#">questions</a>
-            </li>
+          <li><a class="main-nav__link" href="./index.html">home</a></li>
+          <li>
+            <a class="main-nav__link" href="./form-nav.html">submit</a>
+          </li>
+          <li>
+            <a class="link-questions" href="./questions.html">questions</a>
+          </li>
         </ul>
-    </nav>
+      </nav>
 
-    <button class="btn-mobile">
+      <button class="btn-mobile">
         <ion-icon class="icon-mobile" name="menu-outline"></ion-icon>
         <ion-icon class="icon-mobile" name="close-outline"></ion-icon>
-    </button>
-</header>
-<main>
-    <div class="submit-div">
+      </button>
+    </header>
+    <main>
+      <div class="submit-div">
         <div class="form-title">Add your question here!</div>
         <form class="submit-div__form" th:object="${question}" th:action="@{/submit/add/}" method="post">
-            <div class="flex--row team-course-div">
-                <div class="select-div">
-                    <div class="label-input-div">
-                        <!-- <label for="category">Team</label> -->
-                        <select
-                                class="select"
-                                id="team"
-                                onchange="selectingTeam(this.id, 'courses', 'category')"
-                        >
-                            <option value="" disabled selected hidden>team</option>
-                            <option value="frontend">frontend</option>
-                            <option value="backend">backend</option>
-                        </select>
-                    </div>
-                    <div class="label-input-div">
-                        <!-- <label for="category">Course</label> -->
-                        <select class="select" id="courses"
-                                th:field="*{course}">
-                            <option value="" disabled selected>course</option>
-                            <option th:each="course : ${courses}" th:attr="data-section=${course.getSection().getSectionType()}" th:value="${course.id}" th:text="${course.name}">val</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="label-input-div category">
-                    <input
-                            type="text"
-                            name="category"
-                            id="category"
-                            placeholder="category"
-                            th:field="*{category}"
-                    />
-                </div>
+          <div class="flex--row team-course-div">
+            <div class="select-div">
+              <div class="label-input-div">
+                <!-- <label for="category">Team</label> -->
+                <select
+                  class="select"
+                  id="team"
+                  onchange="selectingTeam(this.id, 'courses', 'category')"
+                  required
+                >
+                  <option value="" disabled selected hidden>choose team</option>
+                  <option value="frontend">frontend</option>
+                  <option value="backend">backend</option>
+                </select>
+              </div>
+              <div class="label-input-div">
+                <!-- <label for="category">Course</label> -->
+                <select class="select" id="courses" th:field="*{course}">
+                  <option value="" disabled selected hidden data-section="NONE">course</option>
+                  <option th:each="course : ${courses}" th:attr="data-section=${course.getSection().getSectionType()}" th:value="${course.id}" th:text="${course.name}">val</option>
+                </select>
+              </div>
             </div>
-            <div class="label-input-div">
+            <div class="label-input-div category">
+              <select name="category" class="select" id="category" th:field="*{category}">
+                <!-- TODO - THE SAME LIKE SELECTING COURSE -->
+                <!-- after swtiching to backend, only backend categories -->
+                <option th:each="cat : ${categories}" th:value="${cat.id}" th:text="${cat.name}">CSS - positioning</option>
+              </select>
+            </div>
+          </div>
+          <div class="label-input-div">
             <textarea
-                    id="question"
-                    class="input-states"
-                    placeholder="write your question!"
-                    th:field="*{description}"
+              required
+              id="question"
+              class="question"
+              placeholder="write your question!"
+              th:field="*{description}"
             ></textarea>
-            </div>
-            <div class="label-input-div">
+          </div>
+          <div class="label-input-div">
             <textarea
-                    id="answer"
-                    class="input-states"
-                    placeholder="add an answer!"
-                    th:field="*{answer}"
+              required
+              id="answer"
+              class="answer"
+              placeholder="add an answer!"
+              th:field="*{answer}"
             ></textarea>
-            </div>
-            <div class="button-div">
-                <button type="submit" class="button">Submit your question!</button>
-            </div>
+          </div>
+          <div class="button-div">
+            <button type="submit" class="button">Submit your question!</button>
+          </div>
         </form>
-    </div>
-</main>
-</body>
+      </div>
+    </main>
+  </body>
+  <script type="text/javascript" th:src="@{/scripts/script.js}"></script>
+  <script
+    type="module"
+    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+  ></script>
+  <script
+    nomodule
+    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+  ></script>
 </html>
-
-<script type="text/javascript" src="../../static/scripts/script.js"></script>
-<script
-        type="module"
-        src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
-></script>
-<script
-        nomodule
-        src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-></script>

@@ -1,6 +1,7 @@
 package com.restmate.questioncollector.controllers;
 
 import com.restmate.questioncollector.services.CrudService;
+import com.restmate.questioncollector.services.QuestionService;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -29,7 +30,7 @@ public class ListController {
 
     @RequestMapping({"/questions","/questions.html"})
     public String index(Model model){
-        model.addAttribute("questions", questionService.findAll());
+        model.addAttribute("questions", ((QuestionService)questionService).findAll());
         return "list";
     }
 }
