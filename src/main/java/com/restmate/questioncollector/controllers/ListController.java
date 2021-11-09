@@ -15,6 +15,7 @@ public class ListController {
     private final CrudService sectionService;
     private final CrudService courseService;
 
+
     public ListController(
             @Qualifier("questionService") CrudService questionService,
             @Qualifier("categoryService") CrudService categoryService,
@@ -27,9 +28,11 @@ public class ListController {
         this.courseService = courseService;
     }
 
+
     @RequestMapping({"/questions","/questions.html"})
     public String index(Model model){
-        model.addAttribute("questions", questionService.findAll());
+        model.addAttribute("questions", ((QuestionService)questionService).findAll());
         return "list";
+
     }
 }

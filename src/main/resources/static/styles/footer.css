@@ -1,15 +1,22 @@
 .footer--div {
+<<<<<<< HEAD
 	padding: 4.8rem 6.4rem;
+=======
+	padding: 6.4rem 0;
+>>>>>>> 65ebe6cf6e00070d4662c890ecd7c5e2878d8f13
 	grid-template-columns: auto auto 1fr;
 	align-items: center;
 
     border-top: 1px solid rgba(0, 0, 0, 0.2);
 }
 
+<<<<<<< HEAD
 .footer--div:not(.in--home)  {
 	padding: 3.2rem 0;
 }
 
+=======
+>>>>>>> 65ebe6cf6e00070d4662c890ecd7c5e2878d8f13
 .footer--logo {
 	width: 6.4rem;
 	height: 6.4rem;

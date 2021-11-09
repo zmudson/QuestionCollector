@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Question collector &mdash; best tool to practice webdev knowledge</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../../css/styles/general.css">
+  <link rel="stylesheet" href="../../css/styles/questions.css">
+  <link rel="stylesheet" href="../../css/styles/nav-styles.css">
+  <link rel="stylesheet" href="../../css/styles/footer.css">
+
+  <script src="../../static/scripts/questions.js"></script>
+</head>
+
+<body>
+  <header class="header">
+    <a href="./index.html" class="header__logo"> logo </a>
+
+    <nav class="main-nav">
+      <ul class="main-nav__list">
+        <li><a class="main-nav__link" href="./index.html">home</a></li>
+        <li>
+          <a class="main-nav__link" href="./form-nav.html">submit</a>
+        </li>
+        <li>
+          <a class="link-questions" href="./questions.html">questions</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1 class="questions-header">Questions</h1>
+
+    <div class="buttons">
+      <div class="switch frontend-btn">
+        <div class="switch__button">
+          <div class="button-handle"></div>
+        </div>
+        <div class="switch__caption">Frontend</div>
+      </div>
+
+      <button class="random">Randomize</button>
+    </div>
+
+    <div class="question-list">
+      <div class="question__elem frontend" onclick="turnSide(0);">
+        <div class="question">
+          <div class="category">Positioning</div>
+          <div class="question_text">How to center element in flexbox horizontally?</div>
+          <div class="course">Build Responsive Real-World Websites with HTML and CSS</div>
+        </div>
+        <div class="answer">
+          <div class="answer__title">Answer:</div>
+          <div class="answer__text">Use property "justify-content: center;".</div>
+        </div>
+      </div>
+
+      <div class="question__elem backend" onclick="turnSide(1);">
+        <div class="question">
+          <div class="category">backend category</div>
+          <div class="question_text">backend question</div>
+          <div class="course">backend course</div>
+        </div>
+        <div class="answer">
+          <div class="answer__title">Answer:</div>
+          <div class="answer__text">backend answer</div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer--div grid">
+        <div class="footer--logo">logo</div>
+        <div class="footer--links">
+          <p class="footer--desc">Check us out on:</p>
+          <a class="footer__link" href="#"></a>
+          <ion-icon class="footer__icon" name="logo-facebook"></ion-icon>
+          </a>
+          <a class="footer__link" href="https://github.com/restmate-pl">
+            <ion-icon class="footer__icon" name="logo-github"></ion-icon>
+          </a>
+          <a class="footer__link" href="#">
+            <ion-icon class="footer__icon" name="logo-linkedin"></ion-icon>
+          </a>
+        </div>
+        <div class="footer--copy">
+          <p>Copyright &copy; CodeMate 2021</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

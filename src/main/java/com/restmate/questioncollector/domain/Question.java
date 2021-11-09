@@ -1,9 +1,16 @@
 package com.restmate.questioncollector.domain;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "questions")
+@NoArgsConstructor
+@Getter
+@Setter
 public class Question extends BaseEntity{
 
     @Column(name = "description")
@@ -27,38 +34,4 @@ public class Question extends BaseEntity{
         this.category = category;
     }
 
-    public Question() {
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getAnswer() {
-        return answer;
-    }
-
-    public void setAnswer(String answer) {
-        this.answer = answer;
-    }
-
-    public Course getCourse() {
-        return course;
-    }
-
-    public void setCourse(Course course) {
-        this.course = course;
-    }
-
-    public Category getCategory() {
-        return category;
-    }
-
-    public void setCategory(Category category) {
-        this.category = category;
-    }
 }

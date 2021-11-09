@@ -30,4 +30,8 @@ public class Section extends BaseEntity{
     public void setSectionType(SectionType sectionType) {
         this.sectionType = sectionType;
     }
+
+    public void addCourse(Course course) {
+        courses.add(course);
+    }
 }
