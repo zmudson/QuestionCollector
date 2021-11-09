@@ -11,7 +11,7 @@ import java.util.Set;
 @Getter
 @Setter
 @Table(name = "courses")
-public class Course extends BaseEntity{
+public class Course extends BaseEntity  implements Comparable<Course>{
 
     @Column(name = "name")
     private String name;
@@ -39,4 +39,8 @@ public class Course extends BaseEntity{
         questions.add(question);
     }
 
+    @Override
+    public int compareTo(Course o) {
+        return this.name.compareTo(o.getName());
+    }
 }
