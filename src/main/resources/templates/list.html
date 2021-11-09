@@ -59,15 +59,17 @@
     </div>
 
     <div class="question-list">
-        <div class="question__elem frontend" onclick="turnSide(0);" th:each="question : ${questions}">
-            <div class="question">
-                <div class="category" th:text="${question.getCategory().getName()}">Positioning</div>
-                <div class="question__text" th:text="${question.getDescription()}">How to center element in flexbox horizontally?</div>
-                <div class="course" th:text="${question.getCourse().getName()}">Build Responsive Real-World Websites with HTML and CSS</div>
-            </div>
-            <div class="answer">
-                <div class="answer__title">Answer:</div>
-                <div class="answer__text" th:text="${question.getAnswer()}">Use property "justify-content: center;".</div>
+        <div th:each="question, iter : ${questions}" th:class="${question.getCourse().getSection().getSectionType().toString() == 'FRONTEND'}?'question\_\_elem frontend':'question\_\_elem backend'" th:attr="onclick=|turnSide(${iter.count - 1});|">
+            <div class="question__elem-inner">
+                <div class="question">
+                    <div class="category" th:text="${question.getCategory().getName()}">Positioning</div>
+                    <div class="question__text" th:text="${question.getDescription()}">How to center element in flexbox horizontally?</div>
+                    <div class="course" th:text="${question.getCourse().getName()}">Build Responsive Real-World Websites with HTML and CSS</div>
+                </div>
+                <div class="answer">
+                    <div class="answer__title">Answer:</div>
+                    <div class="answer__text" th:text="${question.getAnswer()}">Use property "justify-content: center;".</div>
+                </div>
             </div>
         </div>
 <!--
