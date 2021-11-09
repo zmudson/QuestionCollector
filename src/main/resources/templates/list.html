@@ -19,7 +19,7 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
-    <script th:src="@{/scripts/question.js}"></script>
+    <script th:src="@{/scripts/questions.js}"></script>
 </head>
 
 <body>
@@ -61,9 +61,9 @@
     <div class="question-list">
         <div class="question__elem frontend" onclick="turnSide(0);" th:each="question : ${questions}">
             <div class="question">
-                <div class="category" th:text="${question.getCategory()}">Positioning</div>
+                <div class="category" th:text="${question.getCategory().getName()}">Positioning</div>
                 <div class="question__text" th:text="${question.getDescription()}">How to center element in flexbox horizontally?</div>
-                <div class="course" th:text="${question.getCourse()}">Build Responsive Real-World Websites with HTML and CSS</div>
+                <div class="course" th:text="${question.getCourse().getName()}">Build Responsive Real-World Websites with HTML and CSS</div>
             </div>
             <div class="answer">
                 <div class="answer__title">Answer:</div>
@@ -73,9 +73,9 @@
 
         <div class="question__elem backend" onclick="turnSide(1);" th:each="question : ${questions}">
             <div class="question">
-                <div class="category" th:text="${question.getCategory()}">backend category</div>
+                <div class="category" th:text="${question.getCategory().getName()}">backend category</div>
                 <div class="question__text"  th:text="${question.getDescription()}">backend question</div>
-                <div class="course" th:text="${question.getCourse()}">backend course</div>
+                <div class="course" th:text="${question.getCourse().getName()}">backend course</div>
             </div>
             <div class="answer">
                 <div class="answer__title">Answer:</div>
