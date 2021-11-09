@@ -45,4 +45,20 @@ public class Question extends BaseEntity{
     public void setAnswer(String answer) {
         this.answer = answer;
     }
+
+    public Course getCourse() {
+        return course;
+    }
+
+    public void setCourse(Course course) {
+        this.course = course;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
 }
