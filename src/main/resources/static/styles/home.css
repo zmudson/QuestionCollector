@@ -3,20 +3,12 @@
 /****************/
 
 .section-hero {
-<<<<<<< HEAD
 	padding: 9.6rem 6.4rem;
-=======
-	padding: 9.6rem 0;
->>>>>>> 65ebe6cf6e00070d4662c890ecd7c5e2878d8f13
 	background-color: #96f2d7;
 
 	color: #02261b;
 
-<<<<<<< HEAD
 	min-height: 100vh;
-=======
-	height: 100vh;
->>>>>>> 65ebe6cf6e00070d4662c890ecd7c5e2878d8f13
 }
 .hero-text-box {
 	display: flex;
@@ -29,11 +21,7 @@
 }
 .hero-img-box {
 	width: 100%;
-<<<<<<< HEAD
 	background: url("../images/hero_painting.jpg");
-=======
-	background: url("../../static/images/hero_painting.jpg");
->>>>>>> 65ebe6cf6e00070d4662c890ecd7c5e2878d8f13
 	background-size: cover;
 	background-position: center;
 }
@@ -51,11 +39,7 @@
 /***********************/
 
 .section-description {
-<<<<<<< HEAD
 	padding: 9.6rem 6.4rem;
-=======
-	padding: 9.6rem 0;
->>>>>>> 65ebe6cf6e00070d4662c890ecd7c5e2878d8f13
 
 	margin-bottom: 3.2rem;
 }

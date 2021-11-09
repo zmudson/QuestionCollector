@@ -20,14 +20,8 @@ body {
 /**********************/
 
 .container {
-<<<<<<< HEAD
 	margin: 0 auto;
 	max-width: 120rem;
-=======
-	width: 80vw;
-	margin: 0 auto;
-	max-width: 130rem;
->>>>>>> 65ebe6cf6e00070d4662c890ecd7c5e2878d8f13
 	padding: 0 3.2rem;
 }
 
@@ -86,16 +80,12 @@ body {
 .btn--full:visited {
 	background-color: #087f5b;
 	color: #fff;
-<<<<<<< HEAD
 
 	transition: all 0.2s ease-in-out;
-=======
->>>>>>> 65ebe6cf6e00070d4662c890ecd7c5e2878d8f13
 }
 .btn--outline:link,
 .btn--outline:visited {
 	background-color: #fff;
-<<<<<<< HEAD
 	color: #666;
 
 	transition: all 0.2s ease-in-out;
@@ -113,11 +103,6 @@ body {
 }
 
 
-=======
-	color: #555;
-}
-
->>>>>>> 65ebe6cf6e00070d4662c890ecd7c5e2878d8f13
 /***********************/
 /* LIST */
 /***********************/
