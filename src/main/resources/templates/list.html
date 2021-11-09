@@ -59,7 +59,7 @@
     </div>
 
     <div class="question-list">
-        <div class="question__elem frontend" onclick="turnSide(0);" th:each="question : ${questions}">
+        <div th:each="question, iter : ${questions}" th:class="${question.getCourse().getSection().getSectionType().toString() == 'FRONTEND'}?'question_elem frontend':'question_elem backend'" th:attr="onclick=|turnSide(${iter.count - 1});|">
             <div class="question">
                 <div class="category" th:text="${question.getCategory().getName()}">Positioning</div>
                 <div class="question__text" th:text="${question.getDescription()}">How to center element in flexbox horizontally?</div>
