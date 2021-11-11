@@ -1,3 +1,5 @@
+var starter = true;
+
 function showEnds() {
   if (localStorage.getItem('end') == 'front') {
     var sizeFront = document.getElementsByClassName('frontend').length;
@@ -32,7 +34,7 @@ function start() {
     document.getElementsByClassName('switch__caption')[0].innerText = 'Frontend';
   }
   else {
-    document.getElementsByClassName('switch')[0].classList.add('backend-btn');
+    document.getElementsByClassName('switch')[0].classList.add('backend-btn-starter');
     localStorage.setItem('end', 'back');
     document.getElementsByClassName('switch__caption')[0].innerText = 'Backend';
   }
@@ -44,6 +46,10 @@ function turnSide(i) {
 }
 
 $(function () {
+  if (starter) {
+    document.getElementsByClassName('switch')[0].classList.replace('backend-btn-starter', 'backend-btn');
+    starter = false;
+  }
   $('.switch__button').on('click', function () {
     if (localStorage.getItem('end') == 'back') {
       $('.switch').switchClass('backend-btn', 'frontend-btn', 0);
