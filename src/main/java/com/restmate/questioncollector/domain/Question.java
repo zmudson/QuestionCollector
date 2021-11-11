@@ -14,9 +14,11 @@ import javax.persistence.*;
 public class Question extends BaseEntity{
 
     @Column(name = "description")
+    @Lob
     private String description;
 
     @Column(name = "answer")
+    @Lob
     private String answer;
 
     @ManyToOne
