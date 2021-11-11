@@ -23,7 +23,7 @@ main {
 
 .switch {
   width: 20rem;
-  border-radius: 10rem;
+  border-radius: 100px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-items: center;
@@ -32,11 +32,11 @@ main {
 }
 
 .switch__button {
-  width: 80%;
-  height: 70%;
+  width: 8rem;
+  height: 2.8rem;
   background-color: rgba(66, 66, 66, 0.8);
   border-radius: 100px;
-  padding: 4px 4px;
+  padding: 0.4rem 0.4rem;
   cursor: pointer;
   transition: all 0.3s;
 }
@@ -53,18 +53,23 @@ main {
   transition: all 0.3s;
 }
 
-.backend-btn .button-handle {
-  transform: translate(5rem, 0);
-}
-
 .frontend-btn {
   background-color: #e74c3c;
   color: #000;
 }
 
-.backend-btn {
+.backend-btn, .backend-btn-starter {
   background-color: #11806a;
   color: #fff;
+}
+
+.backend-btn .button-handle {
+  transform: translate(5.1rem, 0);
+}
+
+.backend-btn-starter .button-handle {
+  transition: all 0s;
+  transform: translate(5.1rem, 0);
 }
 
 .switch__caption {
@@ -100,7 +105,7 @@ main {
 }
 
 .question__elem {
-  height: 15rem;
+  min-height: 15rem;
   width: 100%;
   color: #02261b;
   perspective: 500rem;
@@ -109,6 +114,7 @@ main {
 .question__elem-inner {
   width: 100%;
   height: 100%;
+  min-height: 15rem;
   background-color: #f5fefb;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
   border-radius: 2rem;
@@ -215,8 +221,16 @@ main {
     width: 16rem;
   }
 
+  .switch__button {
+    width: 6.4rem;
+  }
+
   .backend-btn .button-handle {
-    transform: translate(3.5rem, 0);
+    transform: translate(3.4rem, 0);
+  }
+
+  .backend-btn-starter .button-handle {
+    transform: translate(3.4rem, 0);
   }
 
   .switch__caption {
@@ -242,13 +256,17 @@ main {
   }
 
   .switch__button {
-    width: 80%;
-    height: 70%;
+    width: 5.6rem;
   }
 
   .backend-btn .button-handle {
-    transform: translate(2.8rem, 0);
+    transform: translate(2.7rem, 0);
   }
+
+  .backend-btn-starter .button-handle {
+    transform: translate(2.7rem, 0);
+  }
+
   .switch__caption {
     font-size: 1.2rem;
   }
