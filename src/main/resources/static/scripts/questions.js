@@ -19,16 +19,20 @@ function showEnds() {
       document.getElementsByClassName('frontend')[i].classList.add('hidden');
     }
   }
+  var sizeQuestions = document.getElementsByClassName('question').length;
+  for (let i = 0; i < sizeQuestions; i++) {
+    document.getElementsByClassName('question__elem-inner')[i].classList.remove('is-flipped');
+  }
 }
 
-window.onload = function () {
+function start() {
   if (localStorage.getItem('end') == null || localStorage.getItem('end') == 'front') {
-    $('.switch').addClass('frontend-btn', 0);
+    document.getElementsByClassName('switch')[0].classList.add('frontend-btn');
     localStorage.setItem('end', 'front');
     document.getElementsByClassName('switch__caption')[0].innerText = 'Frontend';
   }
   else {
-    $(".switch").addClass("backend-btn", 0);
+    document.getElementsByClassName('switch')[0].classList.add('backend-btn');
     localStorage.setItem('end', 'back');
     document.getElementsByClassName('switch__caption')[0].innerText = 'Backend';
   }
@@ -36,14 +40,7 @@ window.onload = function () {
 }
 
 function turnSide(i) {
-  if (document.getElementsByClassName('question')[i].style.visibility == 'hidden') {
-    document.getElementsByClassName('question')[i].style.visibility = 'visible';
-    document.getElementsByClassName('answer')[i].style.visibility = 'hidden';
-  }
-  else {
-    document.getElementsByClassName('question')[i].style.visibility = 'hidden';
-    document.getElementsByClassName('answer')[i].style.visibility = 'visible';
-  }
+  document.getElementsByClassName('question__elem-inner')[i].classList.toggle('is-flipped');
 }
 
 $(function () {
@@ -61,3 +58,5 @@ $(function () {
     showEnds();
   });
 });
+
+start();

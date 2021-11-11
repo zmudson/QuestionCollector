@@ -22,9 +22,11 @@ function selectingTeam(teamSelectId, courseSelectId, categorySelectId) {
 
 const btnNav = document.querySelector(".btn-mobile");
 const headerEl = document.querySelector(".header");
+let mobileNavOpenBool = false;
 
 if (btnNav) {
-	btnNav.addEventListener("click", function () {
+	btnNav.addEventListener("click", () => {
 		headerEl.classList.toggle("nav-open");
+		mobileNavOpenBool = !mobileNavOpenBool;
 	});
 }

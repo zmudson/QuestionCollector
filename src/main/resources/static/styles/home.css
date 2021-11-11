@@ -3,35 +3,40 @@
 /****************/
 
 .section-hero {
-	padding: 9.6rem 6.4rem;
-	background-color: #96f2d7;
+  padding: 9.6rem 6.4rem;
+  background-color: #a5d8ff;
 
-	color: #02261b;
+  color: #0c1b28;
 
-	min-height: 100vh;
+  min-height: 100vh;
 }
 .hero-text-box {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 .hero__description {
-	font-size: 3rem;
-	margin-bottom: 8rem;
-	line-height: 1.5;
+  font-size: 3rem;
+  margin-bottom: 8rem;
+  line-height: 1.5;
 }
 .hero-img-box {
-	width: 100%;
-	background: url("../images/hero_painting.jpg");
-	background-size: cover;
-	background-position: center;
+  width: 100%;
+  background-image: linear-gradient(
+      to right,
+      rgba(210, 231, 255, 0.48),
+      rgba(210, 231, 255, 0.48)
+    ),
+    url("../images/hero-painting-2.webp");
+  background-size: cover;
+  background-position: center;
 }
 .hero__img {
-	display: inline-block;
-	width: 100%;
+  display: inline-block;
+  width: 100%;
 }
 .hero-btns {
-	display: flex;
-	gap: 2.4rem;
+  display: flex;
+  gap: 2.4rem;
 }
 
 /***********************/
@@ -39,53 +44,59 @@
 /***********************/
 
 .section-description {
-	padding: 9.6rem 6.4rem;
+  padding: 9.6rem 6.4rem;
 
-	margin-bottom: 3.2rem;
+  margin-bottom: 3.2rem;
 }
 .description__text {
-	/* empty rule */
-	font-size: inherit;
+  /* empty rule */
+  font-size: inherit;
 }
 
 .description-list {
-	margin-top: 4.8rem;
+  margin-top: 4.8rem;
 }
 
 .description-list__item {
-	padding: 4.8rem 2.4rem;
-	display: flex;
-	flex-direction: column;
-	border-radius: 9px;
-	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-	transition: all 0.3s ease-out;
+  padding: 4.8rem 2.4rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 9px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-out;
 }
 
 .description-list__item:hover {
-	transform: translateY(-10px);
-	box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1);
-	cursor: pointer;
+  transform: translateY(-10px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 }
 
 .description-list__item span {
-	text-align: center;
+  text-align: center;
 }
 
 .description__icon {
-	color: #087f5b;
-	width: 3.2rem;
-	height: 3.2rem;
-	margin-bottom: 1.6rem;
-	align-self: center;
-	border-radius: 50%;
-	padding: 1.2rem;
-	border: 3px solid rgba(8, 127, 91, 0.5);
-	transition: all 0.3s;
+  color: #1665ab;
+  width: 3.2rem;
+  height: 3.2rem;
+  margin-bottom: 1.6rem;
+  align-self: center;
+  border-radius: 50%;
+  padding: 1.2rem;
+  border: 3px solid rgba(22, 102, 171, 0.6);
+  transition: all 0.3s;
 }
 
 .description-list__item:hover .description__icon {
-	box-shadow: 0 0 12px 6px rgba(8, 127, 91, 0.15);
+  box-shadow: 0 0 12px 6px rgba(22, 102, 172, 0.15);
 }
+/* 
+	#3e89c6 main
+	#a5d8ff hero bg
+	#0c1b28 header text
+	#3e89c6 button
+*/
 /* 
     FONT SIZE SYSTEM (px)
     10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
