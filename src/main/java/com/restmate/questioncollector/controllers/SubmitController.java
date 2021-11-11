@@ -50,6 +50,7 @@ public class SubmitController {
     @PostMapping("/submit/add/")
     public String addNewQuestion(@ModelAttribute QuestionCommand questionCommand) {
 
+        if(!questionCommand.isNotNull()) return "redirect:/submit";
 
         log.debug(String.valueOf(questionCommand));
 
