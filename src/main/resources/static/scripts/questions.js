@@ -1,72 +1,66 @@
-var starter = true;
+const switchElement = document.querySelector(".switch");
+const caption = switchElement.querySelector(".switch__caption");
+const questionList = document.querySelector(".question-list");
+let isFrontendActive;
+let isBackendStarter = true;
 
-function showEnds() {
-  if (localStorage.getItem('end') == 'front') {
-    var sizeFront = document.getElementsByClassName('frontend').length;
-    for (let i = 0; i < sizeFront; i++) {
-      document.getElementsByClassName('frontend')[i].classList.remove('hidden');
+function toggle() {
+    if (isBackendStarter) {
+        switchElement.classList.replace('backend-btn-starter', 'backend-btn');
+        isBackendStarter = false;
     }
-    var sizeBack = document.getElementsByClassName('backend').length;
-    for (let i = 0; i < sizeBack; i++) {
-      document.getElementsByClassName('backend')[i].classList.add('hidden');
+    if (isFrontendActive) {
+        switchElement.classList.remove("frontend-btn");
+        switchElement.classList.add("backend-btn");
+        sessionStorage.setItem("section", "backend");
+        caption.textContent = sessionStorage.getItem("section");
+    } else {
+        switchElement.classList.remove("backend-btn");
+        switchElement.classList.add("frontend-btn");
+        sessionStorage.setItem("section", "frontend");
+        caption.textContent = sessionStorage.getItem("section");
     }
-  }
-  else {
-    var sizeBack = document.getElementsByClassName('backend').length;
-    for (let i = 0; i < sizeBack; i++) {
-      document.getElementsByClassName('backend')[i].classList.remove('hidden');
-    }
-    var sizeFront = document.getElementsByClassName('frontend').length;
-    for (let i = 0; i < sizeFront; i++) {
-      document.getElementsByClassName('frontend')[i].classList.add('hidden');
-    }
-  }
-  var sizeQuestions = document.getElementsByClassName('question').length;
-  for (let i = 0; i < sizeQuestions; i++) {
-    document.getElementsByClassName('question__elem-inner')[i].classList.remove('is-flipped');
-  }
+    isFrontendActive = !isFrontendActive;
+    handleQuestions();
 }
 
-function start() {
-  if (localStorage.getItem('end') == null || localStorage.getItem('end') == 'front') {
-    document.getElementsByClassName('switch')[0].classList.add('frontend-btn');
-    localStorage.setItem('end', 'front');
-    document.getElementsByClassName('switch__caption')[0].innerText = 'Frontend';
-  }
-  else {
-    document.getElementsByClassName('switch')[0].classList.add('backend-btn-starter');
-    localStorage.setItem('end', 'back');
-    document.getElementsByClassName('switch__caption')[0].innerText = 'Backend';
-  }
-  showEnds();
+function initQuestions() {
+    const list = questionList.querySelectorAll(".question__elem");
+    list.forEach(question => {
+        question.addEventListener("click", e => {
+            e.currentTarget.querySelector(".question__elem-inner").classList.toggle("is-flipped");
+        });
+    });
 }
 
-function turnSide(i) {
-  document.getElementsByClassName('question__elem-inner')[i].classList.toggle('is-flipped');
+function handleQuestions() {
+    const list = questionList.querySelectorAll(".question__elem");
+    const activeSection = sessionStorage.getItem("section");
+    list.forEach(question => {
+        question.style.display = !question.classList.contains(activeSection) ? "none" : "block";
+    });
 }
 
-$(function () {
-  if (starter) {
-    document.getElementsByClassName('switch')[0].classList.replace('backend-btn-starter', 'backend-btn');
-    starter = false;
-  }
-  $('.switch__button').on('click', function () {
-    if (localStorage.getItem('end') == 'back') {
-      $('.switch').switchClass('backend-btn', 'frontend-btn', 0);
-      localStorage.setItem('end', 'front');
-      document.getElementsByClassName('switch__caption')[0].innerText = 'Frontend';
+function init() {
+    if (!sessionStorage.getItem("section")) {
+        sessionStorage.setItem("section", "frontend");
     }
-    else {
-      $('.switch').switchClass('frontend-btn', 'backend-btn', 0);
-      localStorage.setItem('end', 'back');
-      document.getElementsByClassName('switch__caption')[0].innerText = 'Backend';
+    isFrontendActive = sessionStorage.getItem("section") == "frontend";
+    if (isFrontendActive) {
+        switchElement.classList.add("frontend-btn");
+    } else {
+        switchElement.classList.add("backend-btn-starter");
     }
-    showEnds();
-  });
-});
+    caption.textContent = sessionStorage.getItem("section");
+    initQuestions();
+    handleQuestions();
+    // document.body.classList.remove("unloaded");
+}
 
-start();
+window.addEventListener('DOMContentLoaded', init);
+
+switchElement.querySelector(".switch__button").addEventListener("click", toggle);
 
 document.querySelector('.random').addEventListener('click', () => {
-  window.location.reload();
+    window.location.reload();
 });
