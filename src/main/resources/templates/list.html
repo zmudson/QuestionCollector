@@ -17,23 +17,23 @@
     <link rel="stylesheet"  th:href="@{/styles/footer.css}"  />
 
 
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
-    <script th:src="@{/scripts/questions.js}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" defer></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js" defer></script>
+    <script th:src="@{/scripts/questions.js}" th:attr="defer"></script>
 </head>
 
 <body>
 <header class="header">
-    <a href="./index.html" class="header__logo"> logo </a>
+    <a href="index" class="header__logo"> logo </a>
 
     <nav class="main-nav">
         <ul class="main-nav__list">
-            <li><a class="main-nav__link" href="./index.html">home</a></li>
+            <li><a class="main-nav__link" href="index">home</a></li>
             <li>
-                <a class="main-nav__link" href="./form-nav.html">submit</a>
+                <a class="main-nav__link" href="submit">submit</a>
             </li>
             <li>
-                <a class="link-questions" href="list.html">questions</a>
+                <a class="link-questions" href="list">questions</a>
             </li>
         </ul>
     </nav>
@@ -93,8 +93,8 @@
             <div class="footer--logo">logo</div>
             <div class="footer--links">
                 <p class="footer--desc">Check us out on:</p>
-                <a class="footer__link" href="#"></a>
-                <ion-icon class="footer__icon" name="logo-facebook"></ion-icon>
+                <a class="footer__link" href="https://www.facebook.com/vilcode-108311144997852/">
+                    <ion-icon class="footer__icon" name="logo-facebook"></ion-icon>
                 </a>
                 <a class="footer__link" href="https://github.com/restmate-pl">
                     <ion-icon class="footer__icon" name="logo-github"></ion-icon>

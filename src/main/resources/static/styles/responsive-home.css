@@ -133,14 +133,7 @@
 		font-size: 2.4rem;
 	}
 
-	.footer--div {
-		grid-template-columns: 1fr;
-		justify-items: center;
-	}
-	.footer--copy {
-		grid-column: 1 / -1;
-		justify-self: center;
-	}
+	
 }
 
 /* 

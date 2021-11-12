@@ -1,3 +1,7 @@
+window.addEventListener('DOMContentLoaded', () => {
+	document.body.classList.remove('preload');
+});
+
 function selectingTeam(teamSelectId, courseSelectId, categorySelectId) {
 	const teamSelect = document.getElementById(teamSelectId);
 	const courseSelect = document.getElementById(courseSelectId);

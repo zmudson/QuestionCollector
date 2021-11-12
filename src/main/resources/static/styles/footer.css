@@ -68,3 +68,14 @@
 		justify-self: flex-end;
 	}
 }
+
+@media(max-width: 25em) {
+	.footer--div {
+		grid-template-columns: 1fr;
+		justify-items: center;
+	}
+	.footer--copy {
+		grid-column: 1 / -1;
+		justify-self: center;
+	}
+}
