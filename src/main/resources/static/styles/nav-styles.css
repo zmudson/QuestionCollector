@@ -122,6 +122,11 @@ body {
   background-color: #326e9e;
 }
 
+.link-questions:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 0.4rem #1f4463;
+}
+
 /* BELOW 896PX */
 @media (max-width: 56em) {
   .main-nav__list {
