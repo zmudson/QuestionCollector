@@ -52,7 +52,7 @@ main {
 .button-handle {
   width: 2rem;
   height: 2rem;
-  background-color: rgb(204, 204, 204, 0.5);
+  background-color: rgba(204, 204, 204, 0.5);
   border-radius: 50%;
   transition: all 0.3s;
 }
@@ -92,7 +92,7 @@ main {
   cursor: pointer;
   color: #fff;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-  transition: all 0.2s;
+  transition: background-color 0.2s;
 }
 
 .random:hover {
@@ -181,6 +181,11 @@ main {
 
 .hidden {
   display: none;
+}
+.random:focus-visible,
+.switch__button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 0.2rem #1f4463;
 }
 
 /* BELOW 1232PX 1232/16=77em */
