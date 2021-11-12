@@ -147,7 +147,7 @@ body {
 /* BELOW 704PX 
 MOBILE NAV
 */
-@media (max-width: 44em) {
+@media (max-width: 47em) {
   .btn-mobile {
     display: block;
     z-index: 1001;
@@ -172,16 +172,15 @@ MOBILE NAV
     /* hide navigation */
 
     opacity: 0;
-    pointer-events: none;
-    /* hide it from screen readers */
-    visibility: hidden;
+
+
     z-index: 1000;
   }
 
   .nav-open .main-nav {
     opacity: 1;
-    pointer-events: auto;
-    visibility: visible;
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+
     transform: translateX(0%);
   }
 

@@ -189,16 +189,17 @@ select:focus-visible, textarea:focus-visible {
   .form-title {
     font-size: 3rem;
   }
-}
-
-@media (max-width: 44em) {
   .submit-div__form {
     width: 90%;
   }
+}
+
+@media (max-width: 44em) {
+
 
   .select-div {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 3fr 5fr;
     gap: 1.6rem;
   }
 }
@@ -211,7 +212,7 @@ select:focus-visible, textarea:focus-visible {
   }
   .submit-div {
     font-size: 1.6rem;
-    /* height: 60rem; */
+
   }
   .form-title {
     font-size: 2.4rem;
@@ -232,6 +233,12 @@ select:focus-visible, textarea:focus-visible {
   .category__input {
     font-size: 1.6rem;
     padding: 0.8rem 1.2rem;
+  }
+
+  .select-div {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 2.4rem;
   }
 }
 
@@ -264,11 +271,10 @@ select:focus-visible, textarea:focus-visible {
     padding: 1.6rem 3.2rem;
     font-size: 1.2rem;
   }
-  .select-div {
-    gap: 1.6rem;
-  }
 
-  .flex-row,
+
+.select-div
+,.flex-row,
   .team-course-div,
   .submit-div__form {
     gap: 2.4rem;
@@ -276,11 +282,8 @@ select:focus-visible, textarea:focus-visible {
 }
 
 @media (max-width: 26em) {
-  .select-div {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
-  }
 
+.select-div,
   .flex-row,
   .team-course-div,
   .submit-div__form {

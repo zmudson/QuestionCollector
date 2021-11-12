@@ -2,6 +2,11 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
+		<meta
+				name="description"
+				content="Question collector - online tool to help you learn using flashcards.
+			 You can also submit new questions to the database and increase the variety of cross-examination"
+		/>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" th:href="@{/styles/form-styles.css}" />
@@ -10,7 +15,7 @@
 		<link rel="stylesheet" th:href="@{/styles/general.css}" />
 		<link rel="stylesheet" th:href="@{/styles/footer.css}" />
         
-        <link rel="stylesheet" th:href="@{/styles/responsive-home.css}">
+<!--        <link rel="stylesheet" th:href="@{/styles/responsive-home.css}">-->
     
 		<title>Question Collector</title>
 	</head>
@@ -143,16 +148,17 @@
 				</div>
 			</div>
 		</footer>
+		<script type="text/javascript" th:src="@{/scripts/script.js}" defer></script>
+		<script
+				type="module"
+				src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+				defer
+		></script>
+		<script
+				nomodule
+				src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+				defer
+		></script>
 	</body>
-	<script type="text/javascript" th:src="@{/scripts/script.js}" defer></script>
-	<script
-		type="module"
-		src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
-    defer
-	></script>
-	<script
-		nomodule
-		src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-    defer
-	></script>
+
 </html>
