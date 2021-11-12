@@ -66,3 +66,7 @@ $(function () {
 });
 
 start();
+
+document.querySelector('.random').addEventListener('click', () => {
+  window.location.reload();
+});

@@ -61,7 +61,7 @@
 							</div>
 							<div class="label-input-div">
 								<!-- <label for="category">Course</label> -->
-								<select class="select" id="courses" th:field="*{course}">
+								<select class="select" id="courses" th:field="*{course}" required>
 									<option value="" disabled selected hidden data-section="NONE">
 										course
 									</option>
@@ -82,6 +82,7 @@
 								class="select"
 								id="category"
 								th:field="*{category}"
+                required
 							>
 								<!-- TODO - THE SAME LIKE SELECTING COURSE -->
 								<!-- after swtiching to backend, only backend categories -->
