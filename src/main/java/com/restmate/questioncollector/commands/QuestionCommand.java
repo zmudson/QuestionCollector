@@ -21,14 +21,7 @@ public class QuestionCommand {
     private String category;
 
 
-    @Override
-    public String toString() {
-        return "QuestionCommand{" +
-                "id=" + id +
-                ", description='" + description + '\'' +
-                ", answer='" + answer + '\'' +
-                ", course=" + course +
-                ", category='" + category + '\'' +
-                '}';
+    public boolean isNotNull() {
+        return description!=null && answer != null && course !=null && category != null;
     }
 }

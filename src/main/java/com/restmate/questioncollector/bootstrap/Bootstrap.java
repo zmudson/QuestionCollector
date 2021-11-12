@@ -66,11 +66,11 @@ public class Bootstrap implements CommandLineRunner {
         course4.setSection(backend);
         course5.setSection(backend);
 
-        ((CourseService)courseService).save(course1);
-        ((CourseService)courseService).save(course2);
-        ((CourseService)courseService).save(course3);
-        ((CourseService)courseService).save(course4);
-        ((CourseService)courseService).save(course5);
+        courseService.save(course1);
+        courseService.save(course2);
+        courseService.save(course3);
+        courseService.save(course4);
+        courseService.save(course5);
 
 
         Category category1 = new Category();
@@ -82,10 +82,10 @@ public class Bootstrap implements CommandLineRunner {
         Category category3 = new Category();
         category3.setName("Spring Data JPA");
 
-        ((CategoryService)categoryService).save(category1);
-        ((CategoryService)categoryService).save(category2);
-        ((CategoryService)categoryService).save(category3);
-        ((CategoryService)categoryService).save(category4);
+        categoryService.save(category1);
+        categoryService.save(category2);
+        categoryService.save(category3);
+        categoryService.save(category4);
 
         Question q1 = new Question();
         q1.setCategory(category1);
@@ -99,8 +99,8 @@ public class Bootstrap implements CommandLineRunner {
         q2.setDescription("What is spring context");
         q2.setAnswer("idk");
 
-        ((QuestionService)questionService).save(q1);
-        ((QuestionService)questionService).save(q2);
+        questionService.save(q1);
+        questionService.save(q2);
 
     }
 }

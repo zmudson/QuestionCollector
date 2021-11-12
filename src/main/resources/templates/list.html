@@ -16,25 +16,20 @@
     <link rel="stylesheet"  th:href="@{/styles/nav-styles.css}"  />
     <link rel="stylesheet"  th:href="@{/styles/footer.css}"  />
 
-    <!-- TODO JQuery do wyjebania -->
-    <script src="https://code.jquery.com/jquery-3.6.0.js" defer></script>
-    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js" defer></script>
-
-    <script th:src="@{/scripts/questions.js}" defer></script>
 </head>
 
 <body>
 <header class="header">
-    <a href="index" class="header__logo"> logo </a>
+    <a href="/" class="header__logo"> logo </a>
 
     <nav class="main-nav">
         <ul class="main-nav__list">
-            <li><a class="main-nav__link" href="index">home</a></li>
+            <li><a class="main-nav__link" href="/">home</a></li>
             <li>
-                <a class="main-nav__link" href="submit">submit</a>
+                <a class="main-nav__link" href="/submit">submit</a>
             </li>
             <li>
-                <a class="link-questions" href="questions">questions</a>
+                <a class="link-questions" href="/questions">questions</a>
             </li>
         </ul>
     </nav>
@@ -114,6 +109,10 @@
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js" defer></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js" defer></script>
 <script type="text/javascript" th:src="@{/scripts/script.js}" defer></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+<script th:src="@{/scripts/questions.js} defer"></script>
+
 </body>
 
 </html>
