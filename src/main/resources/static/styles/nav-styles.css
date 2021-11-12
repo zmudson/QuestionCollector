@@ -145,12 +145,13 @@ MOBILE NAV
 @media (max-width: 44em) {
   .btn-mobile {
     display: block;
-    z-index: 111;
+    z-index: 1001;
   }
 
   .main-nav {
     background-color: #f5fefbf8;
     position: absolute;
+
     top: 0;
     left: 0;
 
@@ -160,17 +161,16 @@ MOBILE NAV
     height: 100vh;
 
     justify-content: center;
-    transition: all 0.4s ease-in;
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
     transform: translateX(100%);
 
     /* hide navigation */
 
     opacity: 0;
-    /*make unaccessible for mouse and keyboard */
     pointer-events: none;
-
     /* hide it from screen readers */
     visibility: hidden;
+    z-index: 1000;
   }
 
   .nav-open .main-nav {
