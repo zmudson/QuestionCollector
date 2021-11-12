@@ -6,6 +6,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" th:href="@{/styles/form-styles.css}" />
 		<link rel="stylesheet" th:href="@{/styles/nav-styles.css}" />
+    
+		<link rel="stylesheet" th:href="@{/styles/general.css}" />
+		<link rel="stylesheet" th:href="@{/styles/footer.css}" />
+    
 		<title>Question Collector</title>
 	</head>
 	<body>
@@ -113,14 +117,39 @@
 				</form>
 			</div>
 		</main>
+
+		<footer>
+			<div class="container">
+				<div class="footer--div grid">
+					<div class="footer--logo">logo</div>
+					<div class="footer--links">
+						<p class="footer--desc">Check us out on:</p>
+						<a class="footer__link" href="https://www.facebook.com/vilcode-108311144997852/">
+							<ion-icon class="footer__icon" name="logo-facebook"></ion-icon>
+						</a>
+						<a class="footer__link" href="https://github.com/restmate-pl">
+							<ion-icon class="footer__icon" name="logo-github"></ion-icon>
+						</a>
+						<a class="footer__link" href="#">
+							<ion-icon class="footer__icon" name="logo-linkedin"></ion-icon>
+						</a>
+					</div>
+					<div class="footer--copy">
+						<p>Copyright &copy; vilcode 2021</p>
+					</div>
+				</div>
+			</div>
+		</footer>
 	</body>
-	<script type="text/javascript" th:src="@{/scripts/script.js}"></script>
+	<script type="text/javascript" th:src="@{/scripts/script.js}" defer></script>
 	<script
 		type="module"
 		src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    defer
 	></script>
 	<script
 		nomodule
 		src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    defer
 	></script>
 </html>
