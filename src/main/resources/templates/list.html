@@ -16,10 +16,11 @@
     <link rel="stylesheet"  th:href="@{/styles/nav-styles.css}"  />
     <link rel="stylesheet"  th:href="@{/styles/footer.css}"  />
 
-
+    <!-- TODO JQuery do wyjebania -->
     <script src="https://code.jquery.com/jquery-3.6.0.js" defer></script>
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js" defer></script>
-    <script th:src="@{/scripts/questions.js}" th:attr="defer"></script>
+
+    <script th:src="@{/scripts/questions.js}" defer></script>
 </head>
 
 <body>
@@ -110,9 +111,9 @@
     </div>
 </footer>
 
-<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-<script type="text/javascript" th:src="@{/scripts/script.js}"></script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js" defer></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js" defer></script>
+<script type="text/javascript" th:src="@{/scripts/script.js}" defer></script>
 </body>
 
 </html>
