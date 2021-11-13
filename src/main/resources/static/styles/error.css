@@ -1,0 +1,22 @@
+.section-main {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #a5d8ff;
+}
+.container {
+    display: flex;
+}
+.text-box {
+
+}
+.heading-primary {
+
+}
+.img-box {
+
+}

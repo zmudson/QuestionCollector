@@ -1,10 +1,27 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Error</title>
-</head>
-<body>
-<h1>An error occured: <span th:text="${nr}"></span></h1>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<title>
+			Question collector &mdash; best tool to practice webdev knowledge
+		</title>
+
+		<link rel="stylesheet" href="@{/styles/error.css}" />
+	</head>
+	<body>
+		<div class="section-main">
+			<div class="container">
+                <div class="img-box">
+					<img
+						src="@{/images/sad_page.png}"
+						alt="Image showing sad page cartoon character"
+					/>
+				</div>
+				<div class="text-box">
+					<h1 class="heading-primary">Error <span th:text="${nr}"></span></h1>
+					<p>&mdash; We encountered some sort of problem.</p>
+				</div>
+			</div>
+		</div>
+	</body>
 </html>
