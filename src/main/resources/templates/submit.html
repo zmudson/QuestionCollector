@@ -20,26 +20,28 @@
 		<title>Question Collector</title>
 	</head>
 	<body>
-		<header class="header">
-			<a href="/" class="header__logo"> logo </a>
-
-			<nav class="main-nav">
-				<ul class="main-nav__list">
-					<li><a class="main-nav__link" href="/">home</a></li>
-					<li>
-						<a class="main-nav__link" href="/submit">submit</a>
-					</li>
-					<li>
-						<a class="link-questions" href="/questions">questions</a>
-					</li>
-				</ul>
-			</nav>
-
-			<button class="btn-mobile">
+	<header>
+		<nav>
+			<div class="logo">Logo</div>
+			<div class="openMenu">
 				<ion-icon class="icon-mobile" name="menu-outline"></ion-icon>
-				<ion-icon class="icon-mobile" name="close-outline"></ion-icon>
-			</button>
-		</header>
+			</div>
+			<ul class="mainMenu">
+				<li><a href="#">home</a></li>
+				<li><a href="#">submit</a></li>
+				<li><a href="#">question</a></li>
+				<div class="closeMenu">
+					<ion-icon class="icon-mobile" name="close-outline"></ion-icon>
+				</div>
+				<span class="icons">
+            <ion-icon class="icon-mobile" name="menu-outline"></ion-icon>
+            <ion-icon class="icon-mobile" name="menu-outline"></ion-icon>
+            <ion-icon class="icon-mobile" name="menu-outline"></ion-icon>
+            <ion-icon class="icon-mobile" name="menu-outline"></ion-icon>
+          </span>
+			</ul>
+		</nav>
+	</header>
 		<main>
 			<div class="submit-div">
 				<div class="form-title">Add your question here!</div>

@@ -24,13 +24,16 @@ function selectingTeam(teamSelectId, courseSelectId, categorySelectId) {
 
 /// mobile navigation
 
-const btnNav = document.querySelector(".btn-mobile");
-const headerEl = document.querySelector(".header");
-let mobileNavOpenBool = false;
 
-if (btnNav) {
-	btnNav.addEventListener("click", () => {
-		headerEl.classList.toggle("nav-open");
-		mobileNavOpenBool = !mobileNavOpenBool;
-	});
-}
+	const mainMenu = document.querySelector(".mainMenu");
+	const closeMenu = document.querySelector(".closeMenu");
+	const openMenu = document.querySelector(".openMenu");
+
+	openMenu.addEventListener("click", () => {
+	mainMenu.style.display = "flex";
+	mainMenu.style.top = "0";
+});
+	closeMenu.addEventListener("click", () => {
+	mainMenu.style.top = "-100%";
+});
+
