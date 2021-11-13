@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 @Component
-@Profile("default")
+@Profile({"default", "bootstrap"})
 public class Bootstrap implements CommandLineRunner {
 
     private final CrudService courseService;
