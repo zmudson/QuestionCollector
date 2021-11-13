@@ -1,5 +1,5 @@
-window.addEventListener('DOMContentLoaded', () => {
-	document.body.classList.remove('preload');
+window.addEventListener("DOMContentLoaded", () => {
+	document.body.classList.remove("preload");
 });
 
 function selectingTeam(teamSelectId, courseSelectId, categorySelectId) {
@@ -12,29 +12,27 @@ function selectingTeam(teamSelectId, courseSelectId, categorySelectId) {
 	courseOptions.forEach((option) => {
 		// console.log(option);
 		option.style.display = "none";
-    // console.log(option.dataset.section);
-		if (teamSelect.value.toLowerCase() === option.dataset.section.toLowerCase()) {
+		// console.log(option.dataset.section);
+		if (
+			teamSelect.value.toLowerCase() === option.dataset.section.toLowerCase()
+		) {
 			option.style.display = "inline";
 		}
 	});
 
-  // change displayed categories after switching sections
-  courseSelect.selectedIndex = 0;
+	// change displayed categories after switching sections
+	courseSelect.selectedIndex = 0;
 }
 
 /// mobile navigation
 
+const mainMenu = document.querySelector(".mainMenu");
+const closeMenuButton = document.querySelector(".closeMenu");
+const openMenuButton = document.querySelector(".openMenu");
 
-	const mainMenu = document.querySelector(".mainMenu");
-	const closeMenu = document.querySelector(".closeMenu");
-	const openMenu = document.querySelector(".openMenu");
-
-	openMenu.addEventListener("click", () => {
-	mainMenu.style.display = "flex";
-	mainMenu.style.top = "0";
-	mainMenu.style.gap = "2.4rem";
+openMenuButton.addEventListener("click", () => {
+	mainMenu.classList.toggle('main-menu--visible');
 });
-	closeMenu.addEventListener("click", () => {
-	mainMenu.style.top = "-100%";
+closeMenuButton.addEventListener("click", () => {
+	mainMenu.classList.toggle('main-menu--visible');
 });
-

@@ -14,7 +14,7 @@ nav {
 
 nav .mainMenu {
   display: flex;
-  gap:2.4rem;
+  gap: 2.4rem;
   list-style: none;
   padding-right: 3.6rem;
 }
@@ -37,6 +37,11 @@ nav .mainMenu .closeMenu{
   font-size: 4.4rem;
   display: none;
   cursor: pointer;
+}
+
+
+.main-menu--visible {
+  top: 0 !important;
 }
 
 nav .logo {
@@ -140,7 +145,7 @@ nav .logo {
     align-items: center;
     background: #edf7fe;
     transition: top 0.4s;
-    display: none;
+    /* display: none; */
   }
 
   nav .mainMenu .closeMenu {
