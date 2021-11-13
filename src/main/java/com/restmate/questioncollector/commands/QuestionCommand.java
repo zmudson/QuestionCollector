@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.Lob;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter
@@ -20,8 +22,7 @@ public class QuestionCommand {
     private String course;
     private String category;
 
-
-    public boolean isNotNull() {
-        return description!=null && answer != null && course !=null && category != null;
+    public boolean isValid() {
+        return !(description.isEmpty() || answer.isEmpty() || course.isEmpty() || category.isEmpty());
     }
 }

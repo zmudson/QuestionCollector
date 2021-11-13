@@ -26,10 +26,10 @@ public class SubmitController {
     private final CrudService courseService;
 
     public SubmitController(
-            CrudService categoryService, @Qualifier("questionService") CrudService questionService,
+            @Qualifier("categoryService")CrudService categoryService,
+            @Qualifier("questionService") CrudService questionService,
             @Qualifier("courseService") CrudService courseService) {
         this.categoryService = categoryService;
-        //this.categoryService = categoryService;
         this.questionService = questionService;
         this.courseService = courseService;
     }
@@ -47,14 +47,20 @@ public class SubmitController {
         return "submit";
     }
 
+    @RequestMapping({"/submitted"})
+    public String submitted(){
+        return "submitted";
+    }
+
     @PostMapping("/submit/add/")
     public String addNewQuestion(@ModelAttribute QuestionCommand questionCommand) {
-
-        if(!questionCommand.isNotNull()) return "redirect:/submit";
+        if(!questionCommand.isValid()){
+            return "redirect:/error";
+        }
 
         log.debug(String.valueOf(questionCommand));
 
-        QuestionCommand savedCommand = ((QuestionService) questionService).saveQuestionCommand(questionCommand);
-        return "redirect:/";
+        ((QuestionService) questionService).saveQuestionCommand(questionCommand);
+        return "redirect:/submitted";
     }
 }
