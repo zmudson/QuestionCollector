@@ -9,9 +9,11 @@ import com.restmate.questioncollector.services.CourseService;
 import com.restmate.questioncollector.services.CrudService;
 import com.restmate.questioncollector.services.SectionService;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 @Component
+@Profile("default")
 public class Bootstrap implements CommandLineRunner {
 
     private final CrudService courseService;
