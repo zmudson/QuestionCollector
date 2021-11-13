@@ -32,6 +32,7 @@ function selectingTeam(teamSelectId, courseSelectId, categorySelectId) {
 	openMenu.addEventListener("click", () => {
 	mainMenu.style.display = "flex";
 	mainMenu.style.top = "0";
+	mainMenu.style.gap = "2.4rem";
 });
 	closeMenu.addEventListener("click", () => {
 	mainMenu.style.top = "-100%";
