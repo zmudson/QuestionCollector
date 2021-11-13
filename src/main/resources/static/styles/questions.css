@@ -42,7 +42,7 @@ main {
   border-radius: 100px;
   padding: 0.4rem 0.4rem;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: box-shadow 0.3s;
 }
 
 .switch__button:hover {
@@ -52,9 +52,9 @@ main {
 .button-handle {
   width: 2rem;
   height: 2rem;
-  background-color: rgb(204, 204, 204, 0.5);
+  background-color: rgba(204, 204, 204, 0.5);
   border-radius: 50%;
-  transition: all 0.3s;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .frontend-btn {
@@ -72,7 +72,6 @@ main {
 }
 
 .backend-btn-starter .button-handle {
-  transition: all 0s;
   transform: translate(5.1rem, 0);
 }
 
@@ -93,7 +92,7 @@ main {
   cursor: pointer;
   color: #fff;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-  transition: all 0.2s;
+  transition: background-color 0.2s;
 }
 
 .random:hover {
@@ -120,7 +119,7 @@ main {
 .question__elem-inner {
   width: 100%;
   min-height: 15rem;
-  transition: all 0.5s;
+  transition: transform 0.5s;
   transform-style: preserve-3d;
   background-color: #f5fefb;
   border-radius: 2rem;

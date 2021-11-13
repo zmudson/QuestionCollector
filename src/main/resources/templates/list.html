@@ -3,6 +3,11 @@
 
 <head>
     <meta charset="UTF-8" />
+    <meta
+            name="description"
+            content="Question collector - online tool to help you learn using flashcards.
+			 You can also submit new questions to the database and increase the variety of cross-examination"
+    />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Question collector &mdash; best tool to practice webdev knowledge</title>
@@ -19,25 +24,22 @@
 </head>
 
 <body>
-<header class="header">
-    <a href="/" class="header__logo"> logo </a>
+<header>
+    <nav>
+        <div class="logo">Logo</div>
+        <div class="openMenu">
+            <ion-icon class="icon-mobile" name="menu-outline"></ion-icon>
+        </div>
+        <ul class="mainMenu">
+            <li><a href="/" class="main-nav__link">home</a></li>
+            <li><a href="/submit" class="main-nav__link">submit</a></li>
+            <li><a href="/questions" class="link-questions">questions</a></li>
+            <div class="closeMenu">
+                <ion-icon class="icon-mobile" name="close-outline"></ion-icon>
+            </div>
 
-    <nav class="main-nav">
-        <ul class="main-nav__list">
-            <li><a class="main-nav__link" href="/">home</a></li>
-            <li>
-                <a class="main-nav__link" href="/submit">submit</a>
-            </li>
-            <li>
-                <a class="link-questions" href="/questions">questions</a>
-            </li>
         </ul>
     </nav>
-
-    <button class="btn-mobile">
-        <ion-icon class="icon-mobile" name="menu-outline"></ion-icon>
-        <ion-icon class="icon-mobile" name="close-outline"></ion-icon>
-    </button>
 </header>
 
 <main>
