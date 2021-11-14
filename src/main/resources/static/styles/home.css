@@ -8,7 +8,7 @@
 
   color: #0c1b28;
 
-  min-height: 100vh;
+  /* max-height: 100vh; */
 }
 .hero-text-box {
   display: flex;
