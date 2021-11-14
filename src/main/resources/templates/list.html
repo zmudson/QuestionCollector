@@ -1,76 +1,101 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-
-<head>
-    <meta charset="UTF-8" />
-    <meta
-            name="description"
-            content="Question collector - online tool to help you learn using flashcards.
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="description"
+			content="Question collector - online tool to help you learn using flashcards.
 			 You can also submit new questions to the database and increase the variety of cross-examination"
-    />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Question collector &mdash; best tool to practice webdev knowledge</title>
+		/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>
+			Question collector &mdash; best tool to practice webdev knowledge
+		</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
 
-    <link rel="stylesheet"  th:href="@{/styles/general.css}"  />
-    <link rel="stylesheet"  th:href="@{/styles/questions.css}"  />
-    <link rel="stylesheet"  th:href="@{/styles/nav-styles.css}"  />
-    <link rel="stylesheet"  th:href="@{/styles/footer.css}"  />
+		<link rel="stylesheet" th:href="@{/styles/general.css}" />
+		<link rel="stylesheet" th:href="@{/styles/questions.css}" />
+		<link rel="stylesheet" th:href="@{/styles/nav-styles.css}" />
+		<link rel="stylesheet" th:href="@{/styles/footer.css}" />
+	</head>
 
-</head>
+	<body>
+		<header>
+			<nav>
+				<div class="logo">
+					<img
+						th:src="@{/images/vilcode-text-transparent.png}"
+						alt="Vilcode logo"
+					/>
+				</div>
+				<div class="openMenu">
+					<ion-icon class="icon-mobile" name="menu-outline"></ion-icon>
+				</div>
+				<ul class="mainMenu">
+					<li><a href="/" class="main-nav__link">home</a></li>
+					<li><a href="/submit" class="main-nav__link">submit</a></li>
+					<li><a href="/questions" class="link-questions">questions</a></li>
+					<div class="closeMenu">
+						<ion-icon class="icon-mobile" name="close-outline"></ion-icon>
+					</div>
+				</ul>
+			</nav>
+		</header>
 
-<body>
-<header>
-    <nav>
-        <div class="logo">Logo</div>
-        <div class="openMenu">
-            <ion-icon class="icon-mobile" name="menu-outline"></ion-icon>
-        </div>
-        <ul class="mainMenu">
-            <li><a href="/" class="main-nav__link">home</a></li>
-            <li><a href="/submit" class="main-nav__link">submit</a></li>
-            <li><a href="/questions" class="link-questions">questions</a></li>
-            <div class="closeMenu">
-                <ion-icon class="icon-mobile" name="close-outline"></ion-icon>
-            </div>
+		<main>
+			<h1 class="questions-header">Questions</h1>
 
-        </ul>
-    </nav>
-</header>
+			<div class="buttons">
+				<div class="switch">
+					<div class="switch__button">
+						<div class="button-handle"></div>
+					</div>
+					<div class="switch__caption"></div>
+				</div>
 
-<main>
-    <h1 class="questions-header">Questions</h1>
+				<button class="random">Randomize</button>
+			</div>
 
-    <div class="buttons">
-        <div class="switch">
-            <div class="switch__button">
-                <div class="button-handle"></div>
-            </div>
-            <div class="switch__caption"></div>
-        </div>
-
-        <button class="random">Randomize</button>
-    </div>
-
-    <div class="question-list">
-        <div th:each="question, iter : ${questions}" th:class="${question.getCourse().getSection().getSectionType().toString() == 'FRONTEND'}?'question\_\_elem frontend':'question\_\_elem backend'" th:attr="onclick=|turnSide(${iter.count - 1});|">
-            <div class="question__elem-inner">
-                <div class="question">
-                    <div class="category" th:text="${question.getCategory().getName()}">Positioning</div>
-                    <div class="question__text" th:text="${question.getDescription()}">How to center element in flexbox horizontally?</div>
-                    <div class="course" th:text="${question.getCourse().getName()}">Build Responsive Real-World Websites with HTML and CSS</div>
-                </div>
-                <div class="answer">
-                    <div class="answer__title">Answer:</div>
-                    <div class="answer__text" th:text="${question.getAnswer()}">Use property "justify-content: center;".</div>
-                </div>
-            </div>
-        </div>
-<!--
+			<div class="question-list">
+				<div
+					th:each="question, iter : ${questions}"
+					th:class="${question.getCourse().getSection().getSectionType().toString() == 'FRONTEND'}?'question\_\_elem frontend':'question\_\_elem backend'"
+					th:attr="onclick=|turnSide(${iter.count - 1});|"
+				>
+					<div class="question__elem-inner">
+						<div class="question">
+							<div
+								class="category"
+								th:text="${question.getCategory().getName()}"
+							>
+								Positioning
+							</div>
+							<div
+								class="question__text"
+								th:text="${question.getDescription()}"
+							>
+								How to center element in flexbox horizontally?
+							</div>
+							<div class="course" th:text="${question.getCourse().getName()}">
+								Build Responsive Real-World Websites with HTML and CSS
+							</div>
+						</div>
+						<div class="answer">
+							<div class="answer__title">Answer:</div>
+							<div class="answer__text" th:text="${question.getAnswer()}">
+								Use property "justify-content: center;".
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--
         <div class="question__elem backend" onclick="turnSide(1);" th:each="question : ${questions}">
             <div class="question">
                 <div class="category" th:text="${question.getCategory().getName()}">backend category</div>
@@ -82,39 +107,52 @@
                 <div class="answer__text" th:text="${question.getAnswer()}">backend answer</div>
             </div>
         </div> -->
-    </div>
-</main>
+			</div>
+		</main>
 
-<footer>
-    <div class="container">
-        <div class="footer--div grid">
-            <div class="footer--logo">logo</div>
-            <div class="footer--links">
-                <p class="footer--desc">Check us out on:</p>
-                <a class="footer__link" href="https://www.facebook.com/vilcode-108311144997852/">
-                    <ion-icon class="footer__icon" name="logo-facebook"></ion-icon>
-                </a>
-                <a class="footer__link" href="https://github.com/restmate-pl">
-                    <ion-icon class="footer__icon" name="logo-github"></ion-icon>
-                </a>
-                <a class="footer__link" href="#">
-                    <ion-icon class="footer__icon" name="logo-linkedin"></ion-icon>
-                </a>
-            </div>
-            <div class="footer--copy">
-                <p>Copyright &copy; vilcode 2021</p>
-            </div>
-        </div>
-    </div>
-</footer>
+		<footer>
+			<div class="container">
+				<div class="footer--div grid">
+					<div class="footer--logo">logo</div>
+					<div class="footer--links">
+						<p class="footer--desc">Check us out on:</p>
+						<a
+							class="footer__link"
+							href="https://www.facebook.com/vilcode-108311144997852/"
+						>
+							<ion-icon class="footer__icon" name="logo-facebook"></ion-icon>
+						</a>
+						<a class="footer__link" href="https://github.com/restmate-pl">
+							<ion-icon class="footer__icon" name="logo-github"></ion-icon>
+						</a>
+						<a class="footer__link" href="#">
+							<ion-icon class="footer__icon" name="logo-linkedin"></ion-icon>
+						</a>
+					</div>
+					<div class="footer--copy">
+						<p>Copyright &copy; vilcode 2021</p>
+					</div>
+				</div>
+			</div>
+		</footer>
 
-<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js" defer></script>
-<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js" defer></script>
-<script type="text/javascript" th:src="@{/scripts/script.js}" defer></script>
-<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
-<script th:src="@{/scripts/questions.js}"></script>
-
-</body>
-
+		<script
+			type="module"
+			src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+			defer
+		></script>
+		<script
+			nomodule
+			src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+			defer
+		></script>
+		<script
+			type="text/javascript"
+			th:src="@{/scripts/script.js}"
+			defer
+		></script>
+		<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+		<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+		<script th:src="@{/scripts/questions.js}"></script>
+	</body>
 </html>

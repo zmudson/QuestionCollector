@@ -16,8 +16,30 @@
 		/>
 
 		<link rel="stylesheet" th:href="@{/styles/error.css}" />
+		<link rel="stylesheet" th:href="@{/styles/nav-styles.css}">
 	</head>
 	<body>
+		<header>
+			<nav>
+				<div class="logo">
+					<img
+						th:src="@{/images/vilcode-text-transparent.png}"
+						alt="Vilcode logo"
+					/>
+				</div>
+				<div class="openMenu">
+					<ion-icon class="icon-mobile" name="menu-outline"></ion-icon>
+				</div>
+				<ul class="mainMenu">
+					<li><a href="/" class="main-nav__link">home</a></li>
+					<li><a href="/submit" class="main-nav__link">submit</a></li>
+					<li><a href="/questions" class="link-questions">questions</a></li>
+					<div class="closeMenu">
+						<ion-icon class="icon-mobile" name="close-outline"></ion-icon>
+					</div>
+				</ul>
+			</nav>
+		</header>
 		<div class="section-main">
 			<div class="container">
                 <div class="img-box">

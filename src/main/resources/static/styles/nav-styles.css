@@ -50,7 +50,16 @@ nav .logo {
   margin-left: 2rem;
   cursor: pointer;
   font-size: 4.4rem;
+
+  height: 7.2rem;
+  display: flex;
+  align-items: center;
 }
+
+nav .logo img {
+   height: 100%; 
+}
+
 /*hover*/
 .link-questions:link,
 .link-questions:visited{
