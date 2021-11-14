@@ -2,8 +2,8 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 	<head>
 		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>
 			Question collector &mdash; best tool to practice webdev knowledge
 		</title>
@@ -16,16 +16,19 @@
 		/>
 
 		<link rel="stylesheet" th:href="@{/styles/error.css}" />
-		<link rel="stylesheet" th:href="@{/styles/nav-styles.css}">
+		<link rel="stylesheet" th:href="@{/styles/nav-styles.css}" />
 	</head>
 	<body>
 		<header>
 			<nav>
 				<div class="logo">
-					<img
-						th:src="@{/images/vilcode-text-transparent.png}"
-						alt="Vilcode logo"
-					/>
+					<a href="/">
+						<img
+							class="logo--img"
+							th:src="@{/images/vilcode-text-transparent.png}"
+							alt="Vilcode logo"
+						/>
+					</a>
 				</div>
 				<div class="openMenu">
 					<ion-icon class="icon-mobile" name="menu-outline"></ion-icon>
@@ -42,7 +45,7 @@
 		</header>
 		<div class="section-main">
 			<div class="container">
-                <div class="img-box">
+				<div class="img-box">
 					<img
 						th:src="@{/images/sad_page.png}"
 						alt="Image showing sad page cartoon character"

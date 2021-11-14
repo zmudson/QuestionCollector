@@ -56,7 +56,11 @@ nav .logo {
   align-items: center;
 }
 
-nav .logo img {
+.logo a {
+  height: 100%;
+}
+
+.logo--img {
    height: 100%; 
 }
 

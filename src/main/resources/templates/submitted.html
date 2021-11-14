@@ -16,16 +16,19 @@
 		/>
 
 		<link rel="stylesheet" th:href="@{/styles/error.css}" />
-		<link rel="stylesheet" th:href="@{/styles/nav-styles.css}">
+		<link rel="stylesheet" th:href="@{/styles/nav-styles.css}" />
 	</head>
 	<body>
 		<header>
 			<nav>
 				<div class="logo">
-					<img
-						th:src="@{/images/vilcode-text-transparent.png}"
-						alt="Vilcode logo"
-					/>
+					<a href="/">
+						<img
+							class="logo--img"
+							th:src="@{/images/vilcode-text-transparent.png}"
+							alt="Vilcode logo"
+						/>
+					</a>
 				</div>
 				<div class="openMenu">
 					<ion-icon class="icon-mobile" name="menu-outline"></ion-icon>
@@ -42,7 +45,7 @@
 		</header>
 		<div class="section-main">
 			<div class="container">
-                <div class="img-box">
+				<div class="img-box">
 					<img
 						th:src="@{/images/happy_page.png}"
 						alt="Image showing happy page cartoon character"
