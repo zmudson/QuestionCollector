@@ -27,6 +27,18 @@ public class Course extends BaseEntity  implements Comparable<Course>{
     )
     private Set<Question> questions = new HashSet<>();
 
+    @ManyToMany
+    @JoinTable(
+            name = "courses_categories",
+            joinColumns = {
+                    @JoinColumn(name = "course_id")
+            },
+            inverseJoinColumns = {
+                    @JoinColumn(name = "category_id")
+            }
+    )
+    private Set<Category> categories = new HashSet<>();
+
     public Course(String name, Section section) {
         this.name = name;
         this.section = section;

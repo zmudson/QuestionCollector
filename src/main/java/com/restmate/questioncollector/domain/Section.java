@@ -1,9 +1,14 @@
 package com.restmate.questioncollector.domain;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
+@Setter
+@Getter
 @Entity
 @Table(name = "sections")
 public class Section extends BaseEntity{
@@ -16,19 +21,7 @@ public class Section extends BaseEntity{
     )
     private final Set<Course> courses = new HashSet<>();
 
-    public Section(SectionType sectionType) {
-        this.sectionType = sectionType;
-    }
-
     public Section() {
-    }
-
-    public SectionType getSectionType() {
-        return sectionType;
-    }
-
-    public void setSectionType(SectionType sectionType) {
-        this.sectionType = sectionType;
     }
 
     public void addCourse(Course course) {

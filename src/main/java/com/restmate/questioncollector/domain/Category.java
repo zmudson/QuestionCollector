@@ -1,9 +1,14 @@
 package com.restmate.questioncollector.domain;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
+@Setter
+@Getter
 @Entity
 @Table(name = "categories")
 public class Category extends BaseEntity implements Comparable<Category>{
@@ -20,21 +25,15 @@ public class Category extends BaseEntity implements Comparable<Category>{
     )
     private Set<Question> questions = new HashSet<>();
 
+    @ManyToMany(mappedBy = "categories")
+    private Set<Course> courses;
+
     public Category(String description) {
         this.name = description;
     }
 
     public Category() {
     }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String description) {
-        this.name = description;
-    }
-
 
     @Override
     public int compareTo(Category o) {
