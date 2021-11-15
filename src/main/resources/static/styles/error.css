@@ -10,10 +10,12 @@ html {
   
   body {
     font-family: "Montserrat", sans-serif;
+      background-color: #a5d8ff;
+
   }
 
 .section-main {
-    height: 100vh;
+  height: calc(100vh - 9.6rem);
 
     display: flex;
     justify-content: center;
@@ -21,7 +23,7 @@ html {
 
     background-color: #a5d8ff;
 
-    padding: 0 3.6rem;
+    padding:19.2rem 3.6rem;
 }
 .container {
     display: flex;
@@ -62,4 +64,8 @@ html {
         align-items: center;
         text-align: center;
     }
+    .section-main {
+        padding-top: 24.8rem;
+    }
+
 }
