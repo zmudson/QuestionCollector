@@ -2,17 +2,16 @@ window.addEventListener("DOMContentLoaded", () => {
 	document.body.classList.remove("preload");
 });
 
-function selectingTeam(teamSelectId, courseSelectId, categorySelectId) {
-	const teamSelect = document.getElementById(teamSelectId);
-	const courseSelect = document.getElementById(courseSelectId);
-	const categorySelect = document.getElementById(categorySelectId);
+const teamSelect = document.getElementById("team");
+const courseSelect = document.getElementById("courses");
+const categorySelect = document.getElementById("category");
+
+function handleTeamSelect() {
 
 	const courseOptions = courseSelect.querySelectorAll("option");
 
 	courseOptions.forEach((option) => {
-		// console.log(option);
 		option.style.display = "none";
-		// console.log(option.dataset.section);
 		if (
 			teamSelect.value.toLowerCase() === option.dataset.section.toLowerCase()
 		) {
@@ -21,8 +20,14 @@ function selectingTeam(teamSelectId, courseSelectId, categorySelectId) {
 	});
 
 	// change displayed categories after switching sections
-	courseSelect.selectedIndex = 0;
+	// teamSelect.selectedIndex = 0;
+	// courseSelect.selectedIndex = 0;
+	// categorySelect.selectedIndex = 0;
 }
+
+teamSelect.addEventListener("change", handleTeamSelect);
+
+
 
 /// mobile navigation
 
