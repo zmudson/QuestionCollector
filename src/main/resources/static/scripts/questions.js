@@ -25,10 +25,9 @@ function toggle() {
 }
 
 function handleQuestions(questions){
-    console.dir(questions);
+    questionList.innerHTML = "";
     questions.forEach(question => {
         // card
-        questionList.innerHTML = "";
         const card = document.createElement("div");
         card.classList.add(question.section);
         card.addEventListener("click", e => {
@@ -83,7 +82,6 @@ function handleQuestions(questions){
         answer.appendChild(answerText);
 
         questionList.appendChild(card);
-        console.dir(card);
     });
 }
 
@@ -96,14 +94,6 @@ function loadQuestions(){
             handleQuestions(questions);
         });
 }
-
-// async function initQuestions() {
-//     questions.forEach(question => {
-//         question.addEventListener("click", e => {
-//             e.currentTarget.querySelector(".question__elem-inner").classList.toggle("is-flipped");
-//         });
-//     });
-// }
 
 function init() {
     if (!sessionStorage.getItem("section")) {
