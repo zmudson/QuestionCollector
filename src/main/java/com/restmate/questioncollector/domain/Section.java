@@ -1,5 +1,6 @@
 package com.restmate.questioncollector.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -19,6 +20,7 @@ public class Section extends BaseEntity{
             fetch = FetchType.LAZY,
             mappedBy = "section"
     )
+    @JsonIgnoreProperties("section")
     private final Set<Course> courses = new HashSet<>();
 
     public Section() {

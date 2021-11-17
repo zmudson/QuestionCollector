@@ -3,15 +3,16 @@ package com.restmate.questioncollector.services;
 import com.restmate.questioncollector.commands.QuestionCommand;
 import com.restmate.questioncollector.converter.QuestionCommandToQuestion;
 import com.restmate.questioncollector.converter.QuestionToQuestionCommand;
-import com.restmate.questioncollector.domain.Category;
-import com.restmate.questioncollector.domain.Question;
+import com.restmate.questioncollector.converter.json.QuestionToQuestionJSON;
+import com.restmate.questioncollector.domain.*;
+import com.restmate.questioncollector.domain.json.QuestionJSON;
 import com.restmate.questioncollector.repositories.QuestionRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.hibernate.ObjectNotFoundException;
 import org.springframework.stereotype.Service;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 @Slf4j
@@ -27,9 +28,30 @@ public class QuestionService implements CrudService<Question, Long> {
     }
 
     @Override
-    public Set<Question> findAll() {
-        Set<Question> questions = new HashSet<>();
+    public List<Question> findAll() {
+        List<Question> questions = new ArrayList<>();
         questionRepository.findAll().iterator().forEachRemaining(questions::add);
+        return questions;
+    }
+
+    public List<Question> findAllBySection(SectionType sectionType){
+        List<Question> questions = new ArrayList<>();
+        questionRepository.findAll().forEach(question -> {
+            Course course = question.getCourse();
+            Section section = course != null ? course.getSection() : null;
+            if(section != null && section.getSectionType() == sectionType){
+                questions.add(question);
+            }
+        });
+        return questions;
+    }
+
+    public List<QuestionJSON> findAllBySectionJSON(SectionType sectionType){
+        List<QuestionJSON> questions = new ArrayList<>();
+        findAllBySection(sectionType).forEach(question -> {
+            QuestionJSON questionJSON = QuestionToQuestionJSON.convert(question);
+            questions.add(questionJSON);
+        });
         return questions;
     }
 

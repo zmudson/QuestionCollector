@@ -30,6 +30,25 @@
 		<link rel="stylesheet" th:href="@{/styles/questions.css}" />
 		<link rel="stylesheet" th:href="@{/styles/nav-styles.css}" />
 		<link rel="stylesheet" th:href="@{/styles/footer.css}" />
+
+		<script
+				type="module"
+				src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+				defer
+		></script>
+		<script
+				nomodule
+				src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+				defer
+		></script>
+		<script
+				th:src="@{/scripts/main.js}"
+				defer
+		></script>
+		<script
+				th:src="@{/scripts/questions.js}"
+				defer
+		></script>
 	</head>
 
 	<body>
@@ -72,51 +91,7 @@
 				<button class="random">Randomize</button>
 			</div>
 
-			<div class="question-list">
-				<div
-					th:each="question, iter : ${questions}"
-					th:class="${question.getCourse().getSection().getSectionType().toString() == 'FRONTEND'}?'question\_\_elem frontend':'question\_\_elem backend'"
-					th:attr="onclick=|turnSide(${iter.count - 1});|"
-				>
-					<div class="question__elem-inner">
-						<div class="question">
-							<div
-								class="category"
-								th:text="${question.getCategory().getName()}"
-							>
-								Positioning
-							</div>
-							<div
-								class="question__text"
-								th:text="${question.getDescription()}"
-							>
-								How to center element in flexbox horizontally?
-							</div>
-							<div class="course" th:text="${question.getCourse().getName()}">
-								Build Responsive Real-World Websites with HTML and CSS
-							</div>
-						</div>
-						<div class="answer">
-							<div class="answer__title">Answer:</div>
-							<div class="answer__text" th:text="${question.getAnswer()}">
-								Use property "justify-content: center;".
-							</div>
-						</div>
-					</div>
-				</div>
-				<!--
-        <div class="question__elem backend" onclick="turnSide(1);" th:each="question : ${questions}">
-            <div class="question">
-                <div class="category" th:text="${question.getCategory().getName()}">backend category</div>
-                <div class="question__text"  th:text="${question.getDescription()}">backend question</div>
-                <div class="course" th:text="${question.getCourse().getName()}">backend course</div>
-            </div>
-            <div class="answer">
-                <div class="answer__title">Answer:</div>
-                <div class="answer__text" th:text="${question.getAnswer()}">backend answer</div>
-            </div>
-        </div> -->
-			</div>
+			<div class="question-list"></div>
 		</main>
 
 		<footer>
@@ -144,24 +119,5 @@
 				</div>
 			</div>
 		</footer>
-
-		<script
-			type="module"
-			src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
-			defer
-		></script>
-		<script
-			nomodule
-			src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-			defer
-		></script>
-		<script
-			type="text/javascript"
-			th:src="@{/scripts/script.js}"
-			defer
-		></script>
-		<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-		<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
-		<script th:src="@{/scripts/questions.js}"></script>
 	</body>
 </html>

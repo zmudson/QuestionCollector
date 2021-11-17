@@ -1,5 +1,6 @@
 package com.restmate.questioncollector.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -23,10 +24,12 @@ public class Category extends BaseEntity implements Comparable<Category>{
             fetch = FetchType.LAZY,
             mappedBy = "category"
     )
+    @JsonIgnoreProperties("category")
     private Set<Question> questions = new HashSet<>();
 
     @ManyToMany(mappedBy = "categories")
-    private Set<Course> courses;
+    @JsonIgnoreProperties("categories")
+    private Set<Course> courses = new HashSet<>();
 
     public Category(String description) {
         this.name = description;

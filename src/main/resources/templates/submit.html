@@ -21,7 +21,24 @@
 		<link rel="stylesheet" th:href="@{/styles/general.css}" />
 		<link rel="stylesheet" th:href="@{/styles/footer.css}" />
 
-		<!-- <link rel="stylesheet" th:href="@{/styles/responsive-home.css}">-->
+		<script
+				type="module"
+				src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+				defer
+		></script>
+		<script
+				nomodule
+				src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+				defer
+		></script>
+		<script
+				th:src="@{/scripts/main.js}"
+				defer
+		></script>
+		<script
+				th:src="@{/scripts/submit.js}"
+				defer
+		></script>
 
 		<title>Question Collector</title>
 	</head>
@@ -165,20 +182,5 @@
 				</div>
 			</div>
 		</footer>
-		<script
-			type="text/javascript"
-			th:src="@{/scripts/script.js}"
-			defer
-		></script>
-		<script
-			type="module"
-			src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
-			defer
-		></script>
-		<script
-			nomodule
-			src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-			defer
-		></script>
 	</body>
 </html>

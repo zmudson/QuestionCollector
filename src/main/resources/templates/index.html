@@ -33,6 +33,22 @@
 		<link rel="stylesheet" th:href="@{/styles/responsive-home.css}" />
 
 		<link rel="stylesheet" th:href="@{/styles/footer.css}" />
+
+
+		<script
+				type="module"
+				src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+				defer
+		></script>
+		<script
+				nomodule
+				src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+				defer
+		></script>
+		<script
+				th:src="@{/scripts/main.js}"
+				defer
+		></script>
 	</head>
 	<body class="preload">
 		<header>
@@ -140,21 +156,5 @@
 				</div>
 			</div>
 		</footer>
-
-		<script
-			type="module"
-			src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
-			defer
-		></script>
-		<script
-			nomodule
-			src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-			defer
-		></script>
-		<script
-			type="text/javascript"
-			th:src="@{/scripts/script.js}"
-			defer
-		></script>
 	</body>
 </html>
