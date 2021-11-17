@@ -1,5 +1,6 @@
 package com.restmate.questioncollector.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -18,6 +19,8 @@ public class Course extends BaseEntity  implements Comparable<Course>{
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "section_id")
+//    @JsonIgnoreProperties("courses")
+    @JsonIgnoreProperties("hibernateLazyInitializer")
     private Section section;
 
     @OneToMany(
@@ -25,6 +28,7 @@ public class Course extends BaseEntity  implements Comparable<Course>{
             cascade = CascadeType.ALL,
             mappedBy = "course"
     )
+    @JsonIgnoreProperties("course")
     private Set<Question> questions = new HashSet<>();
 
     @ManyToMany
@@ -37,6 +41,7 @@ public class Course extends BaseEntity  implements Comparable<Course>{
                     @JoinColumn(name = "category_id")
             }
     )
+    @JsonIgnoreProperties("courses")
     private Set<Category> categories = new HashSet<>();
 
     public Course(String name, Section section) {

@@ -1,5 +1,6 @@
 package com.restmate.questioncollector.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -23,10 +24,12 @@ public class Question extends BaseEntity{
 
     @ManyToOne
     @JoinColumn(name = "course_id")
+    @JsonIgnoreProperties("questions")
     private Course course;
 
     @ManyToOne
     @JoinColumn(name = "category_id")
+    @JsonIgnoreProperties("questions")
     private Category category;
 
     public Question(String description, String answer, Course course, Category category) {

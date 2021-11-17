@@ -9,14 +9,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 
 @Controller
-public class ListController {
+public class QuestionsController {
     private final CrudService questionService;
     private final CrudService categoryService;
     private final CrudService sectionService;
     private final CrudService courseService;
 
-
-    public ListController(
+    public QuestionsController(
             @Qualifier("questionService") CrudService questionService,
             @Qualifier("categoryService") CrudService categoryService,
             @Qualifier("sectionService") CrudService sectionService,
@@ -32,7 +31,7 @@ public class ListController {
     @RequestMapping({"/questions","/questions.html"})
     public String index(Model model){
         model.addAttribute("questions", ((QuestionService)questionService).findAll());
-        return "list";
+        return "questions";
 
     }
 }
