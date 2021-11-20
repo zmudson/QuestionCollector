@@ -1,5 +1,6 @@
 package com.restmate.questioncollector.commands;
 
+import com.restmate.questioncollector.services.CrudService;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -10,6 +11,7 @@ import javax.persistence.Lob;
 @Setter
 @NoArgsConstructor
 public class QuestionCommand {
+
     private Long id;
     @Lob
     private String description;
@@ -20,5 +22,16 @@ public class QuestionCommand {
 
     public boolean isValid() {
         return !(description.isEmpty() || answer.isEmpty() || course.isEmpty() || category.isEmpty());
+    }
+
+    @Override
+    public String toString() {
+        return "QuestionCommand{" +
+                "id=" + id +
+                ", description='" + description + '\'' +
+                ", answer='" + answer + '\'' +
+                ", course='" + course + '\'' +
+                ", category='" + category + '\'' +
+                '}';
     }
 }

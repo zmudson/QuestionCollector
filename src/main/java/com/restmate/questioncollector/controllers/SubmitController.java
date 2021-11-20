@@ -2,6 +2,7 @@ package com.restmate.questioncollector.controllers;
 
 import com.restmate.questioncollector.domain.Category;
 import com.restmate.questioncollector.domain.Course;
+import com.restmate.questioncollector.exceptions.NotFoundException;
 import com.restmate.questioncollector.services.CategoryService;
 import com.restmate.questioncollector.services.CourseService;
 import com.restmate.questioncollector.services.CrudService;
@@ -9,13 +10,12 @@ import com.restmate.questioncollector.services.QuestionService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Qualifier;
 import com.restmate.questioncollector.commands.QuestionCommand;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
-import java.util.Set;
 import java.util.TreeSet;
 
 @Slf4j
@@ -55,12 +55,28 @@ public class SubmitController {
     @PostMapping("/submit/add/")
     public String addNewQuestion(@ModelAttribute QuestionCommand questionCommand) {
         if(!questionCommand.isValid()){
+
+            Category cat = ((CategoryService)categoryService).findById(Long.valueOf(questionCommand.getCategory()));
+            if(cat==null) throw new NotFoundException("This category does not exists.");
+
             return "redirect:/error";
         }
-
         log.debug(String.valueOf(questionCommand));
-
         ((QuestionService) questionService).saveQuestionCommand(questionCommand);
         return "redirect:/submitted";
     }
+
+
+
+   /* @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ExceptionHandler({NumberFormatException.class, NotFoundException.class})
+    public ModelAndView badRequest(Exception exception) {
+        log.error("Bad data was sent!");
+        ModelAndView mav = new ModelAndView();
+        mav.addObject("nr", 400);
+        mav.addObject("message",exception.getMessage());
+        mav.setViewName("error_page");
+
+        return mav;
+    }*/
 }
