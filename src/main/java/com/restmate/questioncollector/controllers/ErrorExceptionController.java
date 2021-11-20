@@ -14,14 +14,8 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.NoHandlerFoundException;
 
 @Slf4j
-@Controller
-public class AppErrorController implements ErrorController {
-
-    @RequestMapping("/error")
-    public String pageNotFound() {
-        throw new NotFoundException("This site does not exists.");
-    }
-
+@ControllerAdvice
+public class ErrorExceptionController implements ErrorController {
 
     @ResponseStatus(HttpStatus.NOT_FOUND)
     @ExceptionHandler({NotFoundException.class, NumberFormatException.class})
