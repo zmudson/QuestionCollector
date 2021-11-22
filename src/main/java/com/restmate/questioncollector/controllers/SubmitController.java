@@ -2,6 +2,7 @@ package com.restmate.questioncollector.controllers;
 
 import com.restmate.questioncollector.domain.Category;
 import com.restmate.questioncollector.domain.Course;
+import com.restmate.questioncollector.exceptions.BadRequestException;
 import com.restmate.questioncollector.exceptions.NotFoundException;
 import com.restmate.questioncollector.services.CategoryService;
 import com.restmate.questioncollector.services.CourseService;
@@ -54,29 +55,13 @@ public class SubmitController {
 
     @PostMapping("/submit/add/")
     public String addNewQuestion(@ModelAttribute QuestionCommand questionCommand) {
-        if(!questionCommand.isValid()){
 
-            Category cat = ((CategoryService)categoryService).findById(Long.valueOf(questionCommand.getCategory()));
-            if(cat==null) throw new NotFoundException("This category does not exists.");
+        if(!questionCommand.isValid()) throw new BadRequestException("Submit form bad format");
+        if(((CategoryService)categoryService).findById(Long.valueOf(questionCommand.getCategory()))==null) throw new BadRequestException("This category does not exist.");
+        if(((CourseService)courseService).findById(Long.valueOf(questionCommand.getCourse()))==null) throw new BadRequestException("This course does not exist.");
 
-            return "redirect:/error";
-        }
         log.debug(String.valueOf(questionCommand));
         ((QuestionService) questionService).saveQuestionCommand(questionCommand);
         return "redirect:/submitted";
     }
-
-
-
-   /* @ResponseStatus(HttpStatus.BAD_REQUEST)
-    @ExceptionHandler({NumberFormatException.class, NotFoundException.class})
-    public ModelAndView badRequest(Exception exception) {
-        log.error("Bad data was sent!");
-        ModelAndView mav = new ModelAndView();
-        mav.addObject("nr", 400);
-        mav.addObject("message",exception.getMessage());
-        mav.setViewName("error_page");
-
-        return mav;
-    }*/
 }

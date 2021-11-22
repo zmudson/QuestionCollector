@@ -1,15 +1,15 @@
 package com.restmate.questioncollector.controllers;
 
+import com.restmate.questioncollector.exceptions.BadRequestException;
+import com.restmate.questioncollector.exceptions.ErrorObject;
 import com.restmate.questioncollector.exceptions.NotFoundException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ControllerAdvice;
-import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.NoHandlerFoundException;
 
@@ -18,19 +18,36 @@ import org.springframework.web.servlet.NoHandlerFoundException;
 public class ErrorExceptionController implements ErrorController {
 
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    @ExceptionHandler({NotFoundException.class, NumberFormatException.class})
+    @ExceptionHandler(NotFoundException.class)
     public ModelAndView notFound(Exception exception) {
         log.error(exception.getMessage());
         ModelAndView mav = new ModelAndView();
-        int errorId = 444;
-        if(exception instanceof NumberFormatException) errorId = 400;
-        if(exception instanceof NotFoundException) errorId = 404;
 
-        mav.addObject("nr", errorId);
-        mav.addObject("message", exception.getMessage());
+        mav.addObject("nr", HttpStatus.NOT_FOUND.value());
+        mav.addObject("message", "This page does not exist.");
         mav.setViewName("error_page");
 
         return mav;
+    }
+
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ExceptionHandler({NumberFormatException.class, BadRequestException.class})
+    public ModelAndView badRequest(Exception exception) {
+        log.error(exception.getMessage());
+        ModelAndView mav = new ModelAndView();
+
+        mav.addObject("nr", HttpStatus.BAD_REQUEST.value());
+        mav.addObject("message", "Bad request.");
+        mav.setViewName("error_page");
+
+        return mav;
+    }
+
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ExceptionHandler(ResponseStatusException.class)
+    public @ResponseBody ErrorObject jsonError(Exception exception) {
+        log.error(exception.getMessage());
+        return new ErrorObject("Bad request", HttpStatus.BAD_REQUEST.value());
     }
 
 
