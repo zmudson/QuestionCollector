@@ -1,3 +1,6 @@
+body{
+    overflow: hidden;
+}
 .loader-container{
     width: 100vw;
     height: 100vh;
@@ -23,8 +26,8 @@
     --page: rgba(255, 255, 255, 0.36);
     --page-fold: rgba(255, 255, 255, 0.52);
     --duration: 3s;
-    width: 200px;
-    height: 140px;
+    width: 20rem;
+    height: 14rem;
 
 }
 
@@ -32,7 +35,7 @@
 .loader div {
     width: 100%;
     height: 100%;
-    border-radius: 13px;
+    border-radius: 1.3rem;
     position: relative;
     z-index: 1;
     -webkit-perspective: 600px;
@@ -54,8 +57,8 @@
     --o: 0;
     --c: var(--page);
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 1rem;
+    left: 1rem;
     -webkit-transform-origin: 100% 50%;
     transform-origin: 100% 50%;
     color: var(--c);
@@ -91,8 +94,8 @@
 }
 
 .loader div ul li svg {
-    width: 90px;
-    height: 120px;
+    width: 9rem;
+    height: 12rem;
     display: block;
 }
 
@@ -110,7 +113,7 @@
     left: 0;
     right: 0;
     top: 100%;
-    margin-top: 20px;
+    margin-top: 2rem;
     text-align: center;
     color: var(--text);
 }
@@ -306,15 +309,15 @@
 /*    font-family: "Roboto", Arial;*/
 /*}*/
 
-body .dribbble {
-    position: fixed;
-    display: block;
-    right: 24px;
-    bottom: 24px;
-}
+/*body .dribbble {*/
+/*    position: fixed;*/
+/*    display: block;*/
+/*    right: 24px;*/
+/*    bottom: 24px;*/
+/*}*/
 
-body .dribbble img {
-    display: block;
-    width: 76px;
-}
+/*body .dribbble img {*/
+/*    display: block;*/
+/*    width: 76px;*/
+/*}*/
 /*# sourceMappingURL=styles.css.map */
