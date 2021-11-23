@@ -1,7 +1,8 @@
-body{
+.loading {
     overflow: hidden;
 }
-.loader-container{
+
+.loading .loader-container{
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -9,14 +10,14 @@ body{
     justify-content: center;
     position: absolute;
     background-color: #edf7ff;
-    overflow: hidden;
     z-index: 11111;
-
-
 }
-.loader-container.hidden {
+
+.loader-container{
     display: none;
 }
+
+
 
 .loader {
     --background: linear-gradient(135deg, #23c4f8, #275efe);
