@@ -173,7 +173,7 @@ nav .logo {
 
   nav .openMenu {
     display: flex;
-    gap: 3.2rem;
+    gap: 4.8rem;
     align-self: center;
 
   }
@@ -193,7 +193,7 @@ nav .logo {
   }
  .link-questions:link,
  .link-questions:visited{
-   margin: 0.8rem 0;
+   margin: 1.6rem 0;
  }
 
 
