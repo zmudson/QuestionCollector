@@ -65,7 +65,14 @@ html {
         text-align: center;
     }
     .section-main {
-        padding-top: 24.8rem;
+        padding-top: 16rem;
+    }
+    .img-box {
+        width:12.8rem;
+        height: 12.8rem;
+    }
+    .heading-primary {
+        font-size: 4.8rem;
     }
 
 }

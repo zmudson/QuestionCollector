@@ -279,5 +279,9 @@ main {
   }
 }
 
-@media (max-width: 26em) {
+@media(min-height: 37.5em){
+  main {
+    min-height: 60vh;
+  }
+
 }

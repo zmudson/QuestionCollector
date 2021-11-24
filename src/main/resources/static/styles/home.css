@@ -63,7 +63,7 @@
   flex-direction: column;
   border-radius: 9px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease-out;
+  transition: box-shadow 0.3s ease-out, transform 0.3s ease-out;
 }
 
 .description-list__item:hover {
@@ -85,7 +85,7 @@
   border-radius: 50%;
   padding: 1.2rem;
   border: 3px solid rgba(22, 102, 171, 0.6);
-  transition: all 0.3s;
+  transition: box-shadow 0.3s;
 }
 
 .description-list__item:hover .description__icon {
