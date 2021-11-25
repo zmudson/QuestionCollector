@@ -16,7 +16,7 @@ main {
 padding: 3.2rem 0;
   display: flex;
   justify-content: center;
-  height: calc(100vh - 19.2rem);
+  min-height: calc(100vh - 19.2rem);
 }
 
 ::placeholder {
@@ -52,11 +52,12 @@ padding: 3.2rem 0;
   background-color: #edf7fe;
   width: 70%;
   max-width: 100rem;
-  max-height: 70rem;
+max-height: 68rem;
+
   color: #fff;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 3.2rem;
   font-size: 3rem;
 
@@ -86,7 +87,6 @@ padding: 3.2rem 0;
   flex-direction: column;
   gap: 3.2rem;
   width: 80%;
-  height: 100%;
   justify-content: space-around;
 
   margin: 0 auto 4.8rem auto;
@@ -244,121 +244,41 @@ select:focus-visible, textarea:focus-visible {
   }
 }
 
-@media (max-width: 33em) {
-main {
-  padding: 1.6rem 0;
-}
-  .submit-div {
-    font-size: 1.2rem;
-    gap: 1.2rem;
-  }
-  .form-title {
-    height: 8rem;
-    font-size: 2rem;
-  }
-  .select {
-    font-size: 1.4rem;
-  }
-  .category__input {
-    font-size: 1.4rem;
-  }
-  .question,
-  .answer {
-    padding: 0.8rem 1.2rem;
-    font-size: 1.4rem;
-    height: 8rem;
-  }
+/*@media (max-width: 33em) {*/
+/*main {*/
+/*  padding: 1.6rem 0;*/
+/*}*/
+/*  .submit-div {*/
+/*    font-size: 1.2rem;*/
+/*    gap: 1.2rem;*/
+/*  }*/
+/*  .form-title {*/
+/*    height: 8rem;*/
+/*    font-size: 2rem;*/
+/*  }*/
+/*  .select {*/
+/*    font-size: 1.4rem;*/
+/*  }*/
+/*  .category__input {*/
+/*    font-size: 1.4rem;*/
+/*  }*/
+/*  .question,*/
+/*  .answer {*/
+/*    padding: 0.8rem 1.2rem;*/
+/*    font-size: 1.4rem;*/
+/*    height: 8rem;*/
+/*  }*/
 
-  .button {
-    padding: 1.6rem 3.2rem;
-    font-size: 1.2rem;
-  }
-
-
-.select-div
-,.flex-row,
-  .team-course-div,
-  .submit-div__form {
-    gap: 1.6rem;
-  }
-}
-/*STYLING FORM FOR HEIGHT*/
-/*min iwdth 1232   100vh for >743px*/
-@media screen and (min-width: 77em)  and (max-height: 57em) {
-  main {
-    min-height: 55rem;
-    padding: 1.6rem 0;
-  }
-
-  .submit-div {
-    max-height: 70rem;
-    gap: 1.2rem;
-  }
-
-  .submit-div__form,
-  .team-course-div {
-    gap: 1.6rem;
-  }
-
-  .question,
-  .answer {
-    height: 6.4rem;
-  }
-}
-
-/*max width 1232  min-width 920  100vh for >743px*/
-@media screen and (max-width: 77em)  and (max-height: 57em) and (min-width: 57.5rem) {
-  main {
-    min-height: 55rem;
-    padding: 1.6rem 0;
-  }
-  .form-title {
-    height: 8rem;
-    font-size: 3.6rem;
-  }
+/*  .button {*/
+/*    padding: 1.6rem 3.2rem;*/
+/*    font-size: 1.2rem;*/
+/*  }*/
 
 
-  .submit-div {
-    max-height: 60rem;
-    gap: 1.2rem;
-    width: 80%;
-  }
-
-  .submit-div__form,
-  .team-course-div {
-    gap: 1.6rem;
-  }
-
-  .question,
-  .answer {
-    height: 6.4rem;
-  }
-}
-
-/*max width 920  min-width 700  100vh for >661px*/
-@media screen and (max-width: 57.5em)  and (max-height: 57em) and (min-width: 43.75rem) {
-  main {
-    min-height: 55rem;
-    padding: 1.6rem 0;
-  }
-  .form-title {
-    height: 8rem;
-  }
-
-
-  .submit-div {
-    max-height: 60rem;
-    gap: 1.2rem;
-    width: 80%;
-  }
-
-  .submit-div__form,
-  .team-course-div {
-    gap: 1.6rem;
-  }
-
-  .question,
-  .answer {
-    height: 6.4rem;
-  }
-}
+/*.select-div*/
+/*,.flex-row,*/
+/*  .team-course-div,*/
+/*  .submit-div__form {*/
+/*    gap: 1.6rem;*/
+/*  }*/
+/*}*/
