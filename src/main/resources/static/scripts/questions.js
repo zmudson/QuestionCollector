@@ -73,7 +73,7 @@ function handleQuestions(questions){
         // answer title
         const answerTitle = document.createElement("div");
         answerTitle.classList.add("answer__title");
-        answer.textContent = "Answer:";
+        answerTitle.textContent = "Answer:";
         answer.appendChild(answerTitle);
 
         // answer text
