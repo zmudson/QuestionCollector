@@ -1,7 +1,6 @@
-main {
+.questions-main {
   padding: 4.8rem 16.6rem;
   background-color: #a5d8ff;
-  margin-bottom: 8rem;
 }
 
 .questions-header {
@@ -187,7 +186,7 @@ main {
 
 /* BELOW 1232PX 1232/16=77em */
 @media (max-width: 77em) {
-  main {
+  .questions-main {
     padding: 4.8rem 5rem;
   }
 }
@@ -248,7 +247,7 @@ main {
 /* below 608px */
 
 @media (max-width: 38em) {
-  main {
+  .questions-main {
     padding: 4.8rem 1.6rem;
   }
 }
@@ -280,8 +279,8 @@ main {
 }
 
 @media(min-height: 37.5em){
-  main {
-    min-height: 60vh;
+  .questions-main {
+    min-height: 80vh;
   }
 
 }
