@@ -45,7 +45,7 @@ function handleCategoriesOptions(categories){
 }
 
 function init(){
-    getCourses(sessionStorage.getItem("section"));
+    getCourses(teamSelect.value);
 }
 
 window.addEventListener('DOMContentLoaded', init);
