@@ -21,7 +21,12 @@ public class QuestionCommand {
     private String category;
 
     public boolean isValid() {
-        return !(description.isEmpty() || answer.isEmpty() || course.isEmpty() || category.isEmpty());
+        return !(
+                description == null || description.isEmpty() ||
+                answer == null || answer.isEmpty() ||
+                course == null || course.isEmpty() ||
+                category == null || category.isEmpty()
+        );
     }
 
     @Override

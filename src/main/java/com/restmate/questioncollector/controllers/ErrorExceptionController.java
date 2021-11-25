@@ -4,6 +4,7 @@ import com.restmate.questioncollector.exceptions.BadRequestException;
 import com.restmate.questioncollector.exceptions.ErrorObject;
 import com.restmate.questioncollector.exceptions.NotFoundException;
 import lombok.extern.slf4j.Slf4j;
+import org.hibernate.ObjectNotFoundException;
 import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
@@ -31,7 +32,7 @@ public class ErrorExceptionController implements ErrorController {
     }
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    @ExceptionHandler({NumberFormatException.class, BadRequestException.class})
+    @ExceptionHandler({NumberFormatException.class, BadRequestException.class, ObjectNotFoundException.class})
     public ModelAndView badRequest(Exception exception) {
         log.error(exception.getMessage());
         ModelAndView mav = new ModelAndView();

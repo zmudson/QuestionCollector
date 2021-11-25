@@ -74,7 +74,6 @@ public class Bootstrap implements CommandLineRunner {
         courseService.save(course4);
         courseService.save(course5);
 
-
         Category category1 = new Category();
         category1.setName("CSS - positioning");
         Category category2 = new Category();
@@ -88,6 +87,18 @@ public class Bootstrap implements CommandLineRunner {
         categoryService.save(category2);
         categoryService.save(category3);
         categoryService.save(category4);
+
+        course1.addCategory(category1);
+        course2.addCategory(category2);
+        course3.addCategory(category2);
+        course4.addCategory(category3);
+        course4.addCategory(category4);
+        course5.addCategory(category3);
+        course5.addCategory(category4);
+
+
+
+
 
         Question q1 = new Question();
         q1.setCategory(category1);

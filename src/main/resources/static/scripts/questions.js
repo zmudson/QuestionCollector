@@ -3,6 +3,7 @@ const caption = switchElement.querySelector(".switch__caption");
 const questionList = document.querySelector(".question-list");
 let isFrontendActive;
 let isBackendStarter = true;
+let isLoaded = false;
 
 function toggle() {
     if (isBackendStarter) {
@@ -91,6 +92,13 @@ function loadQuestions(){
     }))
         .then(response => response.json())
         .then(questions =>{
+            if(!isLoaded){
+                isLoaded = true;
+                setTimeout(() => {
+                    document.body.classList.remove("loading");
+                    document.body.querySelector(".loader-container").remove();
+                }, 1000);
+            }
             handleQuestions(questions);
         });
 }

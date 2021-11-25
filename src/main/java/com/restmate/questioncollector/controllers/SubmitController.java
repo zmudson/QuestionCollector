@@ -3,7 +3,6 @@ package com.restmate.questioncollector.controllers;
 import com.restmate.questioncollector.domain.Category;
 import com.restmate.questioncollector.domain.Course;
 import com.restmate.questioncollector.exceptions.BadRequestException;
-import com.restmate.questioncollector.exceptions.NotFoundException;
 import com.restmate.questioncollector.services.CategoryService;
 import com.restmate.questioncollector.services.CourseService;
 import com.restmate.questioncollector.services.CrudService;
@@ -11,11 +10,9 @@ import com.restmate.questioncollector.services.QuestionService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Qualifier;
 import com.restmate.questioncollector.commands.QuestionCommand;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
 
 import java.util.TreeSet;
 
@@ -38,12 +35,12 @@ public class SubmitController {
     @RequestMapping({"/submit","/submit.html"})
     public String index(Model model){
 
-        TreeSet<Course> courses = new TreeSet<>(((CourseService) courseService).findAll());
-        TreeSet<Category> categories = new TreeSet<>(((CategoryService)categoryService).findAll());
-
+//        TreeSet<Course> courses = new TreeSet<>(((CourseService) courseService).findAll());
+//        TreeSet<Category> categories = new TreeSet<>(((CategoryService)categoryService).findAll());
+//
         model.addAttribute("question", new QuestionCommand());
-        model.addAttribute("courses", courses);
-        model.addAttribute("categories", categories);
+//        model.addAttribute("courses", courses);
+//        model.addAttribute("categories", categories);
 
         return "submit";
     }
