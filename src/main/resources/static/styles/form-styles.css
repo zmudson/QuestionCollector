@@ -12,10 +12,11 @@ body {
 }
 
 main {
-  margin: 4rem auto;
+  margin: 0 auto;
+padding: 3.2rem 0;
   display: flex;
   justify-content: center;
-  min-height: 60rem;
+  min-height: calc(100vh - 19.2rem);
 }
 
 ::placeholder {
@@ -25,7 +26,6 @@ main {
 .flex--row {
   display: flex;
   flex-direction: row;
-  gap: 4.8rem;
 }
 
 .centered-content {
@@ -52,10 +52,12 @@ main {
   background-color: #edf7fe;
   width: 70%;
   max-width: 100rem;
+max-height: 68rem;
+
   color: #fff;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 3.2rem;
   font-size: 3rem;
 
@@ -63,15 +65,18 @@ main {
   overflow: hidden;
 
   box-shadow: 0 1.5rem 1rem rgba(0, 0, 0, 0.116);
+
+  flex-shrink: 0;
 }
 
 .form-title {
-  height: 12.8rem;
+  height: 9.6rem;
   width: 100%;
   background-color: #3e89c6;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 
   font-weight: 700;
   font-size: 4rem;
@@ -82,7 +87,6 @@ main {
   flex-direction: column;
   gap: 3.2rem;
   width: 80%;
-  height: 100%;
   justify-content: space-around;
 
   margin: 0 auto 4.8rem auto;
@@ -207,9 +211,7 @@ select:focus-visible, textarea:focus-visible {
 /* below 608px */
 
 @media (max-width: 38em) {
-  main {
-    margin: 2rem auto;
-  }
+
   .submit-div {
     font-size: 1.6rem;
 
@@ -242,49 +244,39 @@ select:focus-visible, textarea:focus-visible {
   }
 }
 
-@media (max-width: 33em) {
-  main {
-    margin: 2rem auto;
-  }
-  .submit-div {
-    font-size: 1.2rem;
-    gap: 1.2rem;
-  }
-  .form-title {
-    height: 8rem;
-    font-size: 2rem;
-  }
-  .select {
-    font-size: 1.4rem;
-  }
-  .category__input {
-    font-size: 1.4rem;
-  }
-  .question,
-  .answer {
-    padding: 0.8rem 1.2rem;
-    font-size: 1.4rem;
-    height: 8rem;
-  }
+/*@media (max-width: 33em) {*/
+/*main {*/
+/*  padding: 1.6rem 0;*/
+/*}*/
+/*  .submit-div {*/
+/*    font-size: 1.2rem;*/
+/*    gap: 1.2rem;*/
+/*  }*/
+/*  .form-title {*/
+/*    height: 8rem;*/
+/*    font-size: 2rem;*/
+/*  }*/
+/*  .select {*/
+/*    font-size: 1.4rem;*/
+/*  }*/
+/*  .category__input {*/
+/*    font-size: 1.4rem;*/
+/*  }*/
+/*  .question,*/
+/*  .answer {*/
+/*    padding: 0.8rem 1.2rem;*/
+/*    font-size: 1.4rem;*/
+/*    height: 8rem;*/
+/*  }*/
 
-  .button {
-    padding: 1.6rem 3.2rem;
-    font-size: 1.2rem;
-  }
+/*  .button {*/
+/*    padding: 1.6rem 3.2rem;*/
+/*    font-size: 1.2rem;*/
+/*  }*/
 
 
-.select-div
-,.flex-row,
-  .team-course-div,
-  .submit-div__form {
-    gap: 1.6rem;
-  }
-}
-
-/*@media (max-width: 26em) {*/
-
-/*.select-div,*/
-/*  .flex-row,*/
+/*.select-div*/
+/*,.flex-row,*/
 /*  .team-course-div,*/
 /*  .submit-div__form {*/
 /*    gap: 1.6rem;*/
