@@ -11,12 +11,12 @@ body {
   background-color: #fff;
 }
 
-main {
+.main-submit {
   margin: 0 auto;
 padding: 3.2rem 0;
   display: flex;
   justify-content: center;
-  min-height: calc(100vh - 19.2rem);
+  min-height: calc(100vh - 25rem);
 }
 
 ::placeholder {
