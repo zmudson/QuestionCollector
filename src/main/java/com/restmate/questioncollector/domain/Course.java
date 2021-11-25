@@ -12,6 +12,7 @@ import java.util.Set;
 @Getter
 @Setter
 @Table(name = "courses")
+@JsonIgnoreProperties(value = { "section", "questions", "categories" })
 public class Course extends BaseEntity  implements Comparable<Course>{
 
     @Column(name = "name")
@@ -53,7 +54,17 @@ public class Course extends BaseEntity  implements Comparable<Course>{
     }
 
     public void addQuestion(Question question) {
-        questions.add(question);
+        if(question != null){
+            questions.add(question);
+            if(question.getCourse() != null){
+                question.setCourse(this);
+            }
+        }
+    }
+
+    public void addCategory(Category category){
+        categories.add(category);
+        category.getCourses().add(this);
     }
 
     @Override

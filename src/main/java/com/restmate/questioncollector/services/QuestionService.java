@@ -80,8 +80,6 @@ public class QuestionService implements CrudService<Question, Long> {
     public QuestionCommand saveQuestionCommand(QuestionCommand command) {
         Question detachedQuestion = questionCommandToQuestion.convert(command);
 
-        detachedQuestion.getCourse().addQuestion(detachedQuestion);
-
         Question savedQuestion = questionRepository.save(detachedQuestion);
         log.debug("Saved questionId: "+savedQuestion.getId());
         return questionToQuestionCommand.convert(savedQuestion);

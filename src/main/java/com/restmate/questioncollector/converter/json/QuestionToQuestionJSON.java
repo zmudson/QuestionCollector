@@ -20,6 +20,7 @@ public class QuestionToQuestionJSON {
             Course course = question.getCourse();
             questionJSON.setCourse(course != null ? course.getName() : null);
             Section section = course != null ? course.getSection() : null;
+            assert section != null;
             questionJSON.setSection(section.getSectionType().toString().toLowerCase(Locale.ROOT));
         }
 

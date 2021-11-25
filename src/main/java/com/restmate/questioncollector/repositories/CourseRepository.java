@@ -1,6 +1,7 @@
 package com.restmate.questioncollector.repositories;
 
 import com.restmate.questioncollector.domain.Course;
+import com.restmate.questioncollector.domain.Section;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.Optional;

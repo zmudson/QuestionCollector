@@ -13,7 +13,6 @@ public class Error404Controller implements ErrorController {
     @RequestMapping("/error")
     public String pageNotFound() {
         throw new NotFoundException("User got 404 error");
-//        throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "tset");
     }
 
 }

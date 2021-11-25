@@ -94,7 +94,6 @@
 									id="team"
 									required
 								>
-									<option value="" disabled selected hidden>choose team</option>
 									<option value="frontend">frontend</option>
 									<option value="backend">backend</option>
 								</select>
@@ -106,19 +105,7 @@
 									id="courses"
 									th:field="*{course}"
 									required
-								>
-									<option value="" disabled selected hidden data-section="NONE">
-										course
-									</option>
-									<option
-										th:each="course : ${courses}"
-										th:attr="data-section=${course.getSection().getSectionType()}"
-										th:value="${course.id}"
-										th:text="${course.name}"
-									>
-										val
-									</option>
-								</select>
+								></select>
 							</div>
 						</div>
 						<div class="label-input-div category">
@@ -128,17 +115,7 @@
 								id="category"
 								th:field="*{category}"
 								required
-							>
-								<!-- TODO - THE SAME LIKE SELECTING COURSE -->
-								<!-- after swtiching to backend, only backend categories -->
-								<option
-									th:each="cat : ${categories}"
-									th:value="${cat.id}"
-									th:text="${cat.name}"
-								>
-									CSS - positioning
-								</option>
-							</select>
+							></select>
 						</div>
 					</div>
 					<div class="label-input-div">

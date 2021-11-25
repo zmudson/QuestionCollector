@@ -32,12 +32,13 @@ public class QuestionCommandToQuestion implements Converter<QuestionCommand, Que
 
         final Question question = new Question();
 
-        question.setId(source.getId());
         question.setDescription(source.getDescription());
         question.setAnswer(source.getAnswer());
 
         Category category = ((CategoryService)categoryService).findById(Long.valueOf(source.getCategory()));
         Course course = ((CourseService)courseService).findById(Long.valueOf(source.getCourse()));
+        course.addQuestion(question);
+        category.addQuestion(question);
 
         question.setCategory(category);
         question.setCourse(course);
