@@ -49,7 +49,7 @@ padding: 3.2rem 0;
 /* form styling */
 
 .submit-div {
-  background-color: #edf7fe;
+  background-color: #f5f5f5;
   width: 70%;
   max-width: 100rem;
 max-height: 68rem;
@@ -72,7 +72,7 @@ max-height: 68rem;
 .form-title {
   height: 9.6rem;
   width: 100%;
-  background-color: #3e89c6;
+  background-color: #009985;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -154,16 +154,16 @@ max-height: 68rem;
   width: 100%;
 
   color: #081119;
-  background-color: #82c4f9;
+  background-color: #00BFA6;
   box-shadow: 0 1rem 0.8rem rgba(30, 48, 43, 0.1);
 
-  transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.4s ease-in-out;
 }
 
 .button:hover,
 .button:active {
   cursor: pointer;
-  background-color: #5195cc;
+  background-color: #a1f3db;
 }
 
 .select-div {
