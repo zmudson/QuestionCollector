@@ -122,7 +122,7 @@ nav .logo a span {
   transition: transform ease-in-out 0.3s;
 }
 .link-questions::before{
-  background-color: #000;
+  background-color: #1f4463;
 }
 .main-nav__link:hover::before,
 .link-questions:hover::before{
@@ -168,7 +168,7 @@ nav .logo a span {
     background: #fff;
     transition: top 0.4s;
     /* display: none; */
-    gap: 6.4rem;
+    gap: 3.6rem;
   }
 
   nav .mainMenu .closeMenu {
@@ -197,7 +197,10 @@ nav .logo a span {
  .link-questions:visited{
    margin: 1.6rem 0;
  }
-
+.link-questions::before,
+.main-nav__link::before{
+  display: none;
+}
 
 
 }
