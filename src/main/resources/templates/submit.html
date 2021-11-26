@@ -90,7 +90,7 @@
 									id="team"
 									required
 								>
-									<option value="" hidden>select team!</option>
+									<option value="" hidden>select team</option>
 									<option value="frontend">frontend</option>
 									<option value="backend">backend</option>
 								</select>
@@ -103,7 +103,7 @@
 									th:field="*{course}"
 									required
 								>
-
+									<option value="" hidden>select course</option>
 								</select>
 							</div>
 						</div>
@@ -115,7 +115,7 @@
 								th:field="*{category}"
 								required
 							>
-
+								<option value="" hidden>select category</option>
 							</select>
 						</div>
 					</div>
@@ -124,7 +124,7 @@
 							required
 							id="question"
 							class="question"
-							placeholder="write your question!"
+							placeholder="write your question"
 							th:field="*{description}"
 						></textarea>
 					</div>
@@ -133,12 +133,12 @@
 							required
 							id="answer"
 							class="answer"
-							placeholder="add an answer!"
+							placeholder="add an answer"
 							th:field="*{answer}"
 						></textarea>
 					</div>
 					<div class="button-div">
-						<button type="submit" class="button">Submit your question!</button>
+						<button type="submit" class="button">Submit your question</button>
 					</div>
 				</form>
 			</div>
