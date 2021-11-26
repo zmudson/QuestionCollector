@@ -121,7 +121,3 @@ function init() {
 window.addEventListener('DOMContentLoaded', init);
 
 switchElement.querySelector(".switch__button").addEventListener("click", toggle);
-
-document.querySelector('.random').addEventListener('click', () => {
-    window.location.reload();
-});
