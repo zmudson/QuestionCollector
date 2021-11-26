@@ -72,7 +72,8 @@ max-height: 68rem;
 .form-title {
   height: 9.6rem;
   width: 100%;
-  background-color: #00BFA6;
+  background-color: #009F8A;
+  color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
