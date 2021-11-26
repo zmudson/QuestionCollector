@@ -54,6 +54,13 @@
 		padding: 9.6rem 2.4rem;
 	}
 
+	.description-list__item:hover {
+		transform: none;
+	}
+	.description-list__item:hover .description__icon {
+		box-shadow: none;
+	}
+
     .section-description .container{
         display: flex;
         flex-direction: column;
