@@ -50,6 +50,10 @@
 		align-items: center;
 	}
 
+	.section-description{
+		padding: 9.6rem 2.4rem;
+	}
+
     .section-description .container{
         display: flex;
         flex-direction: column;
@@ -77,9 +81,11 @@
 	html{
 		font-size: 50%;
 	}
-
+	.hero__text {
+		font-size: 3rem;
+	}
 	.heading-secondary {
-		font-size: 3.6rem;
+		font-size: 3rem;
 		margin-bottom: 1.6rem;
 	}
 	.description-list {
@@ -88,25 +94,22 @@
 }
 
 @media (max-width: 37em){
+	.section-hero {
+		min-height: 70vh;
+	}
+
 	.hero {
 		gap: 9.6rem;
 	}
+
 }
 
-@media (max-width: 31.25em){
-	.section-description {
-		padding: 9.6rem 0;
-	}
+@media (max-width: 29em) {
+
 	.hero {
 		gap: 20rem;
 	}
-	.hero__text {
-		font-size: 2.4rem;
-	}
 
-}
-
-@media (max-width: 25em) {
 	html{
 		font-size: 43.75%;
 	}
@@ -117,6 +120,9 @@
 	.description-list {
 		font-size: 2.4rem;
 	}
+.section-description{
+	padding: 9.6rem 0;
+}
 
 	
 }
