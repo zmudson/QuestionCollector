@@ -249,6 +249,10 @@
   .questions-main {
     padding: 4.8rem 1.6rem;
   }
+  .questions-header{
+    font-size: 3.6rem;
+  }
+
 }
 
 @media (max-width: 33em) {
