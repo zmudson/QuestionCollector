@@ -199,8 +199,9 @@ nav .logo a span {
 
 }
 @media (max-width: 29em){
-  .logo__a{
-    font-size: 3rem;
+  .logo__a::link,
+  .logo__a:visited{
+    font-size: 2.4rem;
   }
 
 }
