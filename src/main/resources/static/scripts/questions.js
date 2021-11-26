@@ -115,7 +115,6 @@ function init() {
     }
     caption.textContent = sessionStorage.getItem("section");
     loadQuestions();
-    document.body.classList.remove("unloaded");
 }
 
 window.addEventListener('DOMContentLoaded', init);
