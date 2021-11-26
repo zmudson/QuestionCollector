@@ -2,14 +2,9 @@ const switchElement = document.querySelector(".switch");
 const caption = switchElement.querySelector(".switch__caption");
 const questionList = document.querySelector(".question-list");
 let isFrontendActive;
-let isBackendStarter = true;
 let isLoaded = false;
 
 function toggle() {
-    if (isBackendStarter) {
-        switchElement.classList.replace('backend-btn-starter', 'backend-btn');
-        isBackendStarter = false;
-    }
     if (isFrontendActive) {
         switchElement.classList.remove("frontend-btn");
         switchElement.classList.add("backend-btn");
@@ -111,7 +106,7 @@ function init() {
     if (isFrontendActive) {
         switchElement.classList.add("frontend-btn");
     } else {
-        switchElement.classList.add("backend-btn-starter");
+        switchElement.classList.add("backend-btn");
     }
     caption.textContent = sessionStorage.getItem("section");
     loadQuestions();
