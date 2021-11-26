@@ -7,7 +7,7 @@
 
   color: #0c1b28;
 
-  height: calc(100vh - 9.6rem);
+  min-height: calc(100vh - 9.6rem);
 }
 
 .hero {
@@ -51,7 +51,7 @@
 
 .section-description {
   padding: 9.6rem 6.4rem;
-height: calc(100vh - 9.6rem);
+min-height: calc(100vh - 9.6rem);
 
 
   margin-bottom: 3.2rem;

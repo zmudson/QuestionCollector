@@ -162,7 +162,7 @@ nav .logo a span {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: #edf7fe;
+    background: #fff;
     transition: top 0.4s;
     /* display: none; */
   }
@@ -187,10 +187,6 @@ nav .logo a span {
     margin-right: 0;
   }
 
-  .link-questions:hover,
-  .link-questions:active{
-    background-color: #3e89c6;
-  }
   .main-nav__link::before {
     display: none;
   }

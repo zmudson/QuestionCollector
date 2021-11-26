@@ -1,7 +1,8 @@
 .questions-main {
   padding: 4.8rem 16.6rem;
-  background-color: #e6f9f6;
-  min-height: calc(100vh - 9.6rem);
+  background-color: #fff;
+  min-height: calc(100vh - 19.2rem);
+
 }
 
 .questions-header {
@@ -19,6 +20,7 @@
   height: 4rem;
   max-width: 90rem;
   margin: 4.8rem auto 0 auto;
+
 }
 
 .switch {
@@ -34,7 +36,7 @@
 .switch__button {
   width: 8rem;
   height: 2.8rem;
-  background-color: rgba(66, 66, 66, 0.8);
+  background-color: #fff;
   border-radius: 100px;
   padding: 0.4rem 0.4rem;
   cursor: pointer;
@@ -48,20 +50,29 @@
 .button-handle {
   width: 2rem;
   height: 2rem;
-  background-color: rgba(204, 204, 204, 0.5);
+  background-color: #009f8a;
   border-radius: 50%;
   transition: background-color 0.3s, color 0.3s;
 }
 
 .frontend-btn {
-  background-color: #e74c3c;
-  color: #000;
+  background-color: #f8f8f8;
+  color: #008f7c;
 }
 
 .backend-btn, .backend-btn-starter {
-  background-color: #11806a;
+  background-color: #008f7c;
   color: #fff;
 }
+
+.switch.frontend-btn .switch__button{
+  background-color: #008f7c;
+}
+
+.switch.frontend-btn .button-handle{
+  background-color: white;
+}
+
 
 .backend-btn .button-handle {
   transform: translate(5.1rem, 0);
@@ -73,26 +84,8 @@
 
 .switch__caption {
   font-size: 1.6rem;
-  font-weight: 500;
-  text-transform: capitalize;
-}
-
-.random {
-  width: 12rem;
-  background-color: #3e89c6;
-  border: none;
-  border-radius: 100px;
-  font-size: 1.4rem;
   font-weight: 600;
-  font-family: 'Montserrat', sans-serif;
-  cursor: pointer;
-  color: #fff;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.2s;
-}
-
-.random:hover {
-  background-color: #5195cc;
+  text-transform: capitalize;
 }
 
 .question-list {
@@ -133,6 +126,7 @@
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   min-height: 15rem;
+  background-color: #f8f8f8;
 }
 
 .question {
@@ -154,9 +148,10 @@
 
 .course {
   margin-top: auto;
-  font-size: 1.2rem;
-  font-weight: 500;
+  font-size: 1.4rem;
+  font-weight: 600;
   margin-left: auto;
+  color: #008f7c
 }
 
 .answer {
