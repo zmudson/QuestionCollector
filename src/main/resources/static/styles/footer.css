@@ -32,17 +32,24 @@ footer {
 	height: 3.2rem;
 }
 
-.footer__link:hover .footer__icon,
-.footer__link:active .footer__icon {
-
-	transform: scale(105%);
+.footer__icon {
+	color: #999;
+	font-size: 3.2rem;
+	transition: color 0.3s ease-out;
 }
 
-.footer__icon {
-	color: #00BFA6;
-	font-size: 3.2rem;
+/* colors handling for social media icons */
 
-	transition: transform 0.3s ease-out;
+.footer__icon[name=logo-facebook]:hover{
+    color: #3b5998;
+}
+
+.footer__icon[name=logo-github]:hover{
+    color: #0D1117;
+}
+
+.footer__icon[name=logo-linkedin]:hover{
+    color: #2877B5;
 }
 
 .footer--copy {

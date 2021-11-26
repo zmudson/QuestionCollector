@@ -55,33 +55,27 @@
 }
 
 .frontend-btn {
-  background-color: #f8f8f8;
-  color: #000;
-}
-
-.backend-btn, .backend-btn-starter {
   background-color: #008f7c;
   color: #fff;
 }
 
-.switch.frontend-btn .switch__button{
-  background-color: #008f7c;
+.backend-btn {
+  background-color: #30537e;
+  color: #fff;
 }
 
+.switch.frontend-btn .switch__button,
 .switch.backend-btn .switch__button{
-  background-color: #f5fefb;
+  background-color: #2F2E41;
 }
 
-.switch.frontend-btn .button-handle{
-  background-color: white;
+.button-handle{
+  background-color: #cdc8c8;
+  transition: transform 0.3s ease;
 }
 
 
 .backend-btn .button-handle {
-  transform: translate(5.1rem, 0);
-}
-
-.backend-btn-starter .button-handle {
   transform: translate(5.1rem, 0);
 }
 
@@ -154,7 +148,14 @@
   font-size: 1.4rem;
   font-weight: 600;
   margin-left: auto;
-  color: #008f7c
+}
+
+.frontend .course{
+    color: #008f7c;
+}
+
+.backend .course{
+    color: #30537e;
 }
 
 .answer {
