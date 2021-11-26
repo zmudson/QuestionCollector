@@ -8,6 +8,10 @@
   color: #0c1b28;
 
   min-height: calc(100vh - 9.6rem);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero {
