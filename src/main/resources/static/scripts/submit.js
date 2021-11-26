@@ -25,17 +25,22 @@ function getCategories(courseId){
 }
 
 function handleCourseOptions(courses){
+    const placeholderOption = document.getElementById("coursesPlaceholder").cloneNode(true);
     courseSelect.innerHTML = "";
+    courseSelect.appendChild(placeholderOption);
     for (const course of courses) {
         const option = document.createElement("option");
         option.value = course.id;
         option.textContent = course.name;
         courseSelect.appendChild(option);
     }
+    handleCategoriesOptions([]);
 }
 
 function handleCategoriesOptions(categories){
+    const placeholderOption = document.getElementById("categoryPlaceholder").cloneNode(true);
     categorySelect.innerHTML = "";
+    categorySelect.appendChild(placeholderOption);
     for (const category of categories) {
         const option = document.createElement("option");
         option.value = category.id;
@@ -44,20 +49,14 @@ function handleCategoriesOptions(categories){
     }
 }
 
-function init(){
-    getCourses(teamSelect.value);
-}
+teamSelect.addEventListener("change", e => {
+    getCourses(e.currentTarget.value);
 
-window.addEventListener('DOMContentLoaded', init);
-
-
+});
 
 courseSelect.addEventListener("change", e => {
     getCategories(e.currentTarget.value);
 });
 
-teamSelect.addEventListener("change", e => {
-    console.dir(e.currentTarget);
-    getCourses(e.currentTarget.value);
-    categorySelect.innerHTML = "";
-});
+
+
