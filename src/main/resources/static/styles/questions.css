@@ -2,7 +2,6 @@
   padding: 4.8rem 16.6rem;
   background-color: #fff;
   min-height: calc(100vh - 19.2rem);
-
 }
 
 .questions-header {
@@ -36,7 +35,7 @@
 .switch__button {
   width: 8rem;
   height: 2.8rem;
-  background-color: #fff;
+  background-color: #f5fefb;
   border-radius: 100px;
   padding: 0.4rem 0.4rem;
   cursor: pointer;
@@ -57,7 +56,7 @@
 
 .frontend-btn {
   background-color: #f8f8f8;
-  color: #008f7c;
+  color: #000;
 }
 
 .backend-btn, .backend-btn-starter {
@@ -67,6 +66,10 @@
 
 .switch.frontend-btn .switch__button{
   background-color: #008f7c;
+}
+
+.switch.backend-btn .switch__button{
+  background-color: #f5fefb;
 }
 
 .switch.frontend-btn .button-handle{
@@ -274,9 +277,4 @@
   }
 }
 
-@media(min-height: 37.5em){
-  .questions-main {
-    min-height: 80vh;
-  }
 
-}

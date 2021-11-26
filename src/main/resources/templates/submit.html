@@ -90,6 +90,7 @@
 									id="team"
 									required
 								>
+									<option value="" hidden>select team!</option>
 									<option value="frontend">frontend</option>
 									<option value="backend">backend</option>
 								</select>
@@ -101,7 +102,9 @@
 									id="courses"
 									th:field="*{course}"
 									required
-								></select>
+								>
+
+								</select>
 							</div>
 						</div>
 						<div class="label-input-div category">
@@ -111,7 +114,9 @@
 								id="category"
 								th:field="*{category}"
 								required
-							></select>
+							>
+
+							</select>
 						</div>
 					</div>
 					<div class="label-input-div">
