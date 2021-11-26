@@ -1,6 +1,7 @@
 .questions-main {
   padding: 4.8rem 16.6rem;
-  background-color: #a5d8ff;
+  background-color: #e6f9f6;
+  min-height: calc(100vh - 9.6rem);
 }
 
 .questions-header {
