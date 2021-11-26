@@ -94,9 +94,6 @@
 }
 
 @media (max-width: 37em){
-	.section-hero {
-		min-height: 70vh;
-	}
 
 	.hero {
 		gap: 9.6rem;
