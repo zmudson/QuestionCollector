@@ -33,15 +33,9 @@ public class ErrorExceptionController implements ErrorController {
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler({NumberFormatException.class, BadRequestException.class, ObjectNotFoundException.class})
-    public ModelAndView badRequest(Exception exception) {
+    public String badRequest(Exception exception) {
         log.error(exception.getMessage());
-        ModelAndView mav = new ModelAndView();
-
-        mav.addObject("nr", HttpStatus.BAD_REQUEST.value());
-        mav.addObject("message", "Bad request.");
-        mav.setViewName("error_page");
-
-        return mav;
+        return "redirect:/bad_request";
     }
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
