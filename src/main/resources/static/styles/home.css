@@ -3,40 +3,46 @@
 /****************/
 
 .section-hero {
-  padding: 9.6rem 6.4rem;
-  background-color: #a5d8ff;
+  background-color: #fff;
 
   color: #0c1b28;
 
-  /* max-height: 100vh; */
+  min-height: calc(100vh - 9.6rem);
 }
-.hero-text-box {
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 2fr;
+  height: 100%;
+}
+
+.hero p span {
+  color: #00ac95;
+  font-weight: 700;
+}
+
+
+.hero__text{
   display: flex;
   flex-direction: column;
-}
-.hero__description {
-  font-size: 3rem;
-  margin-bottom: 8rem;
-  line-height: 1.5;
-}
-.hero-img-box {
-  width: 100%;
-  background-image: linear-gradient(
-      to right,
-      rgba(210, 231, 255, 0.48),
-      rgba(210, 231, 255, 0.48)
-    ),
-    url("../images/hero-painting-2.webp");
-  background-size: cover;
-  background-position: center;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 3.2rem;
+  font-weight: 600;
+  margin-top: 3.2rem;
+  color: #2F2E41;
+  letter-spacing: -0.5px;
+  line-height: 1.3;
 }
 .hero__img {
-  display: inline-block;
-  width: 100%;
-}
-.hero-btns {
   display: flex;
-  gap: 2.4rem;
+  align-items: center;
+  justify-content: center;
+}
+.hero__img img {
+  max-width: 100%;
 }
 
 /***********************/
@@ -45,8 +51,15 @@
 
 .section-description {
   padding: 9.6rem 6.4rem;
+min-height: calc(100vh - 9.6rem);
+
 
   margin-bottom: 3.2rem;
+}
+.description__header{
+  display: flex;
+  justify-content: center;
+  padding-bottom: 3.2rem;
 }
 .description__text {
   /* empty rule */
@@ -77,14 +90,14 @@
 }
 
 .description__icon {
-  color: #1665ab;
+  color: #00BFA6;
   width: 3.2rem;
   height: 3.2rem;
   margin-bottom: 1.6rem;
   align-self: center;
   border-radius: 50%;
   padding: 1.2rem;
-  border: 3px solid rgba(22, 102, 171, 0.6);
+  border: 3px solid rgba(0, 191, 166, 0.6);
   transition: box-shadow 0.3s;
 }
 

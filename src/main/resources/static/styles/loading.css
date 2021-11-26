@@ -9,7 +9,7 @@
     align-items: center;
     justify-content: center;
     position: absolute;
-    background-color: #edf7ff;
+    background-color: #fff;
     z-index: 11111;
 }
 
@@ -20,8 +20,8 @@
 
 
 .loader {
-    --background: linear-gradient(135deg, #23c4f8, #275efe);
-    --shadow: rgba(39, 94, 254, 0.28);
+    --background: linear-gradient(135deg, #00BFA6, #008a77);
+    --shadow: rgba(0, 172, 149, 0.28);
     --page: rgba(255, 255, 255, 0.36);
     --page-fold: rgba(255, 255, 255, 0.52);
     --duration: 3s;
@@ -114,7 +114,7 @@
     top: 100%;
     margin-top: 2rem;
     text-align: center;
-    color: #1989ae;
+    color: #008a77;
     font-family: Montserrat, sans-serif;
     font-size: 1.6rem;
     font-weight: 600;

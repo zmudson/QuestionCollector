@@ -57,7 +57,7 @@
 
 	<body class="loading">
 
-<!--	set "loader-container active" to show loading animation-->
+<!--	add to body class loading!!-->
 
 	<div class="loader-container">
 		<div class="loader">
@@ -110,31 +110,26 @@
 			<span>Loading</span>
 		</div>
 	</div>
-		<header>
-			<nav>
-				<div class="logo">
-					<a href="/">
-						<img
-							class="logo--img"
-							th:src="@{/images/vilcode-text-transparent.png}"
-							alt="Vilcode logo"
-						/>
-					</a>
-				</div>
-				<div class="openMenu">
-					<ion-icon class="icon-mobile" name="menu-outline"></ion-icon>
-				</div>
-				<ul class="mainMenu">
-					<li><a href="/" class="main-nav__link">home</a></li>
-					<li><a href="/submit" class="main-nav__link">submit</a></li>
-					<li><a href="/questions" class="link-questions">questions</a></li>
-					<div class="closeMenu">
-						<ion-icon class="icon-mobile" name="close-outline"></ion-icon>
-					</div>
-				</ul>
-			</nav>
-		</header>
-
+<header>
+	<nav>
+		<div class="logo">
+			<a href="/" class="logo__a">
+				<span>vilcode</span> learn
+			</a>
+		</div>
+		<div class="openMenu">
+			<ion-icon class="icon-mobile" name="menu-outline"></ion-icon>
+		</div>
+		<ul class="mainMenu">
+			<li><a href="/" class="main-nav__link">home</a></li>
+			<li><a href="/submit" class="main-nav__link">create</a></li>
+			<li><a href="/questions" class="link-questions">learn</a></li>
+			<div class="closeMenu">
+				<ion-icon class="icon-mobile" name="close-outline"></ion-icon>
+			</div>
+		</ul>
+	</nav>
+</header>
 		<main class="questions-main">
 			<h1 class="questions-header">Questions</h1>
 
@@ -146,35 +141,35 @@
 					<div class="switch__caption"></div>
 				</div>
 
-				<button class="random">Randomize</button>
 			</div>
 
 			<div class="question-list"></div>
-		</main>
 
-		<footer>
-			<div class="container">
-				<div class="footer--div grid">
-					<div class="footer--links">
-						<p class="footer--desc">Check us out on:</p>
-						<a
-							class="footer__link"
-							href="https://www.facebook.com/vilcode-108311144997852/"
-						>
-							<ion-icon class="footer__icon" name="logo-facebook"></ion-icon>
-						</a>
-						<a class="footer__link" href="https://github.com/restmate-pl">
-							<ion-icon class="footer__icon" name="logo-github"></ion-icon>
-						</a>
-						<a class="footer__link" href="#">
-							<ion-icon class="footer__icon" name="logo-linkedin"></ion-icon>
-						</a>
-					</div>
-					<div class="footer--copy">
-						<p>Copyright &copy; vilcode <span class="year"></span></p>
-					</div>
-				</div>
+		</main>
+<footer>
+	<div class="container">
+		<div class="footer--div grid">
+			<div class="footer--links">
+				<p class="footer--desc">Check us out on:</p>
+				<a
+						class="footer__link"
+						href="https://www.facebook.com/vilcode-108311144997852/"
+				>
+					<ion-icon class="footer__icon" name="logo-facebook"></ion-icon>
+				</a>
+				<a class="footer__link" href="https://github.com/restmate-pl">
+					<ion-icon class="footer__icon" name="logo-github"></ion-icon>
+				</a>
+				<a class="footer__link" href="#">
+					<ion-icon class="footer__icon" name="logo-linkedin"></ion-icon>
+				</a>
 			</div>
-		</footer>
+			<div class="footer--copy">
+				<p>Copyright &copy; vilcode <span class="year"></span></p>
+			</div>
+		</div>
+	</div>
+</footer>
+
 	</body>
 </html>
