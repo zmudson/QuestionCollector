@@ -43,9 +43,9 @@ nav .mainMenu .closeMenu{
 }
 
 
-.main-menu--visible {
-  top: 0 !important;
-}
+/*.main-menu--visible {*/
+/*  top: 0 !important;*/
+/*}*/
 
 nav .logo {
   justify-self: center;
@@ -158,7 +158,7 @@ nav .logo a span {
   nav .mainMenu {
     height: 100vh;
     position: fixed;
-    top: -100%;
+    top: -100vh;
     right: 0;
     left: 0;
     z-index: 10;
@@ -169,6 +169,10 @@ nav .logo a span {
     transition: top 0.4s;
     /* display: none; */
     gap: 3.6rem;
+  }
+
+  nav .mainMenu.main-menu--visible{
+    top: 0;
   }
 
   nav .mainMenu .closeMenu {
