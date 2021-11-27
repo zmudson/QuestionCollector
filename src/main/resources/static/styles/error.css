@@ -15,7 +15,7 @@ html {
   }
 
 .section-main{
-    min-height: calc(100vh - 9.6rem);
+    max-height: calc(100vh - 9.6rem);
     display: flex;
     align-content: center;
     justify-content: center;
