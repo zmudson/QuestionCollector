@@ -39,81 +39,189 @@ public class Bootstrap implements CommandLineRunner {
         Section backend = new Section();
         backend.setSectionType(SectionType.BACKEND);
 
-        Course course1 = new Course();
-        course1.setName("HTML & CSS");
-        Course course2 = new Course();
-        course2.setName("Angular");
-        Course course3 = new Course();
-        course3.setName("Typescript");
+        Course courseHTMLCSS = new Course();
+        courseHTMLCSS.setName("Build Responsive Real-World Websites with HTML and CSS");
+        Course courseAngular = new Course();
+        courseAngular.setName("Angular - The Complete Guide (2022 Edition)");
+        Course courseTypeScript = new Course();
+        courseTypeScript.setName("Understanding TypeScript - 2022 Edition");
 
-        Course course4 = new Course();
-        course4.setName("Spring Framework Guru");
+        Course courseSpringFrameworkGuru = new Course();
+        courseSpringFrameworkGuru.setName("Spring Framework Guru");
 
-        Course course5 = new Course();
-        course5.setName("Spring Boot Microservices");
 
-        frontend.addCourse(course1);
-        frontend.addCourse(course2);
-        frontend.addCourse(course3);
+        frontend.addCourse(courseHTMLCSS);
+        frontend.addCourse(courseAngular);
+        frontend.addCourse(courseTypeScript);
 
-        backend.addCourse(course4);
-        backend.addCourse(course5);
+        backend.addCourse(courseSpringFrameworkGuru);
 
         ((SectionService)sectionService).save(frontend);
         ((SectionService)sectionService).save(backend);
 
-        course1.setSection(frontend);
-        course2.setSection(frontend);
-        course3.setSection(frontend);
-        course4.setSection(backend);
-        course5.setSection(backend);
+        courseHTMLCSS.setSection(frontend);
+        courseAngular.setSection(frontend);
+        courseTypeScript.setSection(frontend);
+        courseSpringFrameworkGuru.setSection(backend);
 
-        courseService.save(course1);
-        courseService.save(course2);
-        courseService.save(course3);
-        courseService.save(course4);
-        courseService.save(course5);
+        courseService.save(courseHTMLCSS);
+        courseService.save(courseAngular);
+        courseService.save(courseTypeScript);
+        courseService.save(courseSpringFrameworkGuru);
 
-        Category category1 = new Category();
-        category1.setName("CSS - positioning");
-        Category category2 = new Category();
-        category2.setName("JavaScript - OOP");
-        Category category4 = new Category();
-        category4.setName("Dependency Injection");
-        Category category3 = new Category();
-        category3.setName("Spring Data JPA");
+        //frontend categories
+        Category categoryHTMLFundamentals = new Category();
+        categoryHTMLFundamentals.setName("HTML Fundamentals");
+        Category categoryCSSPos = new Category();
+        categoryCSSPos.setName("CSS Positioning");
+        Category categoryCSSffg = new Category();
+        categoryCSSffg.setName("CSS floats, flexbox and grid");
+        Category categoryCSSas  = new Category();
+        categoryCSSas.setName("CSS animations, shadows");
+        Category categoryWDR  = new Category();
+        categoryWDR.setName("Web design rules");
+        Category categoryCaLP  = new Category();
+        categoryCaLP.setName("Components and layout patterns");
+        Category categoryRWD  = new Category();
+        categoryRWD.setName("Responsive web design");
+        Category categoryWO  = new Category();
+        categoryWO.setName("Webpage optimization");
 
-        categoryService.save(category1);
-        categoryService.save(category2);
-        categoryService.save(category3);
-        categoryService.save(category4);
+        Category categoryTSBaT  = new Category();
+        categoryTSBaT.setName("Typescript basics and types");
+        Category categoryCompiler  = new Category();
+        categoryCompiler.setName("Compiler");
+        Category categoryCaI  = new Category();
+        categoryCaI.setName("Classes and interfaces");
+        Category categoryATGD  = new Category();
+        categoryATGD.setName("Advanced types, generics, decorators");
+        Category categoryMaN  = new Category();
+        categoryMaN.setName("Modules and namespaces");
+        Category categoryWebpack  = new Category();
+        categoryWebpack.setName("Webpack");
+        Category category3PL  = new Category();
+        category3PL.setName("3rd Party libraries");
 
-        course1.addCategory(category1);
-        course2.addCategory(category2);
-        course3.addCategory(category2);
-        course4.addCategory(category3);
-        course4.addCategory(category4);
-        course5.addCategory(category3);
-        course5.addCategory(category4);
+        Category categoryCaD  = new Category();
+        categoryCaD.setName("Components and databinding");
+        Category categoryDSaDI  = new Category();
+        categoryDSaDI.setName("Directives, services and dependency injection");
+        Category categoryRaO  = new Category();
+        categoryRaO.setName("Routing and observables");
+        Category categoryForms  = new Category();
+        categoryForms.setName("Forms");
+        Category categoryHR  = new Category();
+        categoryHR.setName("Http requests");
+        Category categoryAaRP  = new Category();
+        categoryAaRP.setName("Authentication and route projection");
+        Category categoryModules  = new Category();
+        categoryModules.setName("Modules");
+        Category categoryNgRx  = new Category();
+        categoryNgRx.setName("NgRx");
 
 
 
+
+
+
+        //backend categories
+        Category categoryDependencyInjection = new Category();
+        categoryDependencyInjection.setName("Dependency Injection");
+        Category categoryJpa = new Category();
+        categoryJpa.setName("Spring Data JPA");
+        Category categoryMaven = new Category();
+        categoryMaven.setName("Maven");
+        Category categoryHibernate = new Category();
+        categoryHibernate.setName("Hibernate");
+        Category categoryMySQL = new Category();
+        categoryMySQL.setName("MySQL");
+        Category categoryMVC = new Category();
+        categoryMVC.setName("Thymeleaf MVC");
+        Category categoryDocker = new Category();
+        categoryDocker.setName("Docker");
+        Category categoryREST = new Category();
+        categoryREST.setName("REST");
+
+        categoryService.save(categoryHTMLFundamentals);
+        categoryService.save(categoryCSSPos);
+        categoryService.save(categoryCSSffg);
+        categoryService.save(categoryCSSas);
+        categoryService.save(categoryWO);
+        categoryService.save(categoryWDR);
+        categoryService.save(categoryWO);
+        categoryService.save(categoryRWD);
+
+        categoryService.save(categoryTSBaT);
+        categoryService.save(categoryCompiler);
+        categoryService.save(categoryCaI);
+        categoryService.save(categoryATGD);
+        categoryService.save(categoryMaN);
+        categoryService.save(categoryWebpack);
+        categoryService.save(category3PL);
+
+        categoryService.save(categoryCaD);
+        categoryService.save(categoryDSaDI);
+        categoryService.save(categoryRaO);
+        categoryService.save(categoryForms);
+        categoryService.save(categoryHR);
+        categoryService.save(categoryAaRP);
+        categoryService.save(categoryModules);
+        categoryService.save(categoryNgRx);
+
+
+        categoryService.save(categoryDependencyInjection);
+        categoryService.save(categoryJpa);
+        categoryService.save(categoryMaven);
+        categoryService.save(categoryHibernate);
+        categoryService.save(categoryMySQL);
+        categoryService.save(categoryMVC);
+        categoryService.save(categoryDocker);
+        categoryService.save(categoryREST);
+
+        courseSpringFrameworkGuru.addCategory(categoryDependencyInjection);
+        courseSpringFrameworkGuru.addCategory(categoryJpa);
+        courseSpringFrameworkGuru.addCategory(categoryMaven);
+        courseSpringFrameworkGuru.addCategory(categoryHibernate);
+        courseSpringFrameworkGuru.addCategory(categoryMySQL);
+        courseSpringFrameworkGuru.addCategory(categoryMVC);
+        courseSpringFrameworkGuru.addCategory(categoryDocker);
+        courseSpringFrameworkGuru.addCategory(categoryREST);
+
+        courseHTMLCSS.addCategory(categoryHTMLFundamentals);
+        courseHTMLCSS.addCategory(categoryCSSPos);
+        courseHTMLCSS.addCategory(categoryCSSffg);
+        courseHTMLCSS.addCategory(categoryCSSas);
+        courseHTMLCSS.addCategory(categoryWDR);
+        courseHTMLCSS.addCategory(categoryRWD);
+        courseHTMLCSS.addCategory(categoryWO);
+
+        courseTypeScript.addCategory(categoryTSBaT);
+        courseTypeScript.addCategory(categoryCompiler);
+        courseTypeScript.addCategory(categoryCaI);
+        courseTypeScript.addCategory(categoryATGD);
+        courseTypeScript.addCategory(categoryMaN);
+        courseTypeScript.addCategory(categoryWebpack);
+        courseTypeScript.addCategory(category3PL);
+
+        courseAngular.addCategory(categoryCaD);
+        courseAngular.addCategory(categoryDSaDI);
+        courseAngular.addCategory(categoryRaO);
+        courseAngular.addCategory(categoryForms);
+        courseAngular.addCategory(categoryHR);
+        courseAngular.addCategory(categoryAaRP);
+        courseAngular.addCategory(categoryModules);
+        courseAngular.addCategory(categoryNgRx);
 
 
         Question q1 = new Question();
-        q1.setCategory(category1);
-        q1.setCourse(course1);
-        q1.setDescription("How to center a div");
-        q1.setAnswer("use your brain");
+        q1.setCategory(categoryMySQL);
+        q1.setCourse(courseSpringFrameworkGuru);
+        q1.setDescription("How get all elements from table Questions?");
+        q1.setAnswer("SELECT * FROM Questions");
 
-        Question q2 = new Question();
-        q2.setCategory(category4);
-        q2.setCourse(course4);
-        q2.setDescription("What is spring context");
-        q2.setAnswer("idk");
+
 
         questionService.save(q1);
-        questionService.save(q2);
 
     }
 }
