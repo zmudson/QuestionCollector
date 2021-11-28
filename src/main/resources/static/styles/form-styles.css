@@ -63,7 +63,7 @@ max-height: 68rem;
   font-size: 3rem;
 
   border-radius: 1rem;
-  overflow: hidden;
+  /*overflow: hidden;*/
 
   box-shadow: 0 1.5rem 1rem rgba(0, 0, 0, 0.116);
 
