@@ -124,6 +124,9 @@
 .no-flexbox-gap .footer--links .footer--link:not(:last-child){
 	margin-right: 2rem;
 }
+.no-flexbox-gap .footer--links .footer--desc{
+	margin-right: 2rem;
+}
 
 .no-flexbox-gap .submit-div .form-title {
 	margin-bottom: 3.2rem;
