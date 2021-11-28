@@ -131,9 +131,7 @@
 .no-flexbox-gap .submit-div .form-title {
 	margin-bottom: 3.2rem;
 }
-.no-flexbox-gap .submit-div__form .flex--row.team-course-div {
-	margin-bottom:3.2rem;
-}
+
 .no-flexbox-gap .submit-div__form .label-input-div.category {
 	margin-bottom:3.2rem;
 }
@@ -145,6 +143,9 @@
 }
 .no-flexbox-gap .question-list div:not(:last-child){
 	margin-bottom: 4.8rem;
+}
+.no-flexbox-gap .answer, .no-flexbox-gap .question{
+	margin-bottom: 3.2rem;
 }
 @media(max-width: 70em){
 	.no-flexbox-gap .mainMenu li:not(:last-child){
