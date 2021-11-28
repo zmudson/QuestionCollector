@@ -116,7 +116,10 @@ max-height: 68rem;
   border: 1px solid transparent;
   transition: outline 0.1s ease;
 
-  -webkit-apperance:none;
+  appearance: none;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  -moz-appearance: none;
 }
 
 .question,
